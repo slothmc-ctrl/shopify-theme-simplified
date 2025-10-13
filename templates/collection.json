@@ -1,0 +1,91 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-collection-banner": {
+      "type": "main-collection-banner",
+      "blocks": {
+        "breadcrumb": {
+          "type": "breadcrumb",
+          "settings": {
+            "show_collections_link": false
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "title-sm"
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumb",
+        "title"
+      ],
+      "settings": {
+        "transparent_header": false,
+        "show_image": false,
+        "image_height": "400px",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#080715",
+        "color_overlay": "rgba(0,0,0,0)",
+        "overlay_opacity": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "zoom"
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "subcollections": {
+          "type": "subcollections",
+          "settings": {
+            "menu": "",
+            "per_row": 5,
+            "show_count": true
+          }
+        }
+      },
+      "block_order": [
+        "subcollections"
+      ],
+      "custom_css": [],
+      "settings": {
+        "products_per_page": 10,
+        "columns": 5,
+        "columns_mobile": "2",
+        "pagination": "paginated",
+        "enable_filtering": true,
+        "filter_collapsed": false,
+        "filter_type": "drawer",
+        "filter_color_swatches": true,
+        "enable_sorting": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "divider": true,
+        "full_width": true,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-collection-banner",
+    "main-collection"
+  ]
+}

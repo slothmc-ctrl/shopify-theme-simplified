@@ -1,0 +1,200 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "settings": {
+        "heading_size": "title-md",
+        "heading_alignment": "text-left",
+        "heading_tag": "h2",
+        "text_size": "text-sm",
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": true
+      }
+    },
+    "faq_gaHbwK": {
+      "type": "faq",
+      "blocks": {
+        "rich_text_ApXdBG": {
+          "type": "rich-text",
+          "settings": {
+            "heading": "<strong>Shipping & Returns</strong>",
+            "text": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_FG8MgQ": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>How can I track my order?</strong>",
+            "text": "<p>Once your order is shipped, we’ll send you an email with a tracking number so you can monitor the delivery status.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_B7kVHA": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>How is shipping calculated for my order?</strong>",
+            "text": "<p>Shipping costs are based on the total weight of the items in your cart.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_bzPPyF": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Do you ship to remote or regional areas?</strong>",
+            "text": "<p><strong>Yes, we deliver to most regional and remote areas across Australia. However, shipping cost and delivery times may increase after checkout depending on the size of the product and location, we will work with you to provide you with the cheapest and fastest option.</strong></p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "rich_text_XUjVdy": {
+          "type": "rich-text",
+          "settings": {
+            "heading": "<strong>Orders</strong>",
+            "text": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_gxx3CT": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>What payment methods do you accept?</strong>",
+            "text": "<p>We accept major credit and debit cards, PayPal, and other secure payment options available during checkout.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_MzBe4J": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Can I cancel or change my order?</strong>",
+            "text": "<p>You can cancel or modify your order as long as it hasn’t been shipped. Please contact us as soon as possible to make changes or cancellations.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_RqBJrV": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Can I make changes to my order after it has been placed?</strong>",
+            "text": "<p>Changes can only be made before your order is shipped. Contact us immediately if you need to update your order details.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "rich_text_DjxTik": {
+          "type": "rich-text",
+          "settings": {
+            "heading": "<strong>Products</strong>",
+            "text": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_tCqaEk": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>How do I choose the right product?</strong>",
+            "text": "<p>Each product page includes detailed specifications to help you decide. If you’re unsure, our friendly support team are available to guide you based on your needs.</p><p>If you have any other questions, don’t hesitate to get in touch with us—we’re here to help</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_gw4FwE": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Do your products come with a warranty?</strong>",
+            "text": "<p>Yes, most of our products come with a 1-year warranty. Specific warranty details are available on each product page.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_ATiwXx": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>What materials are your products made of?</strong>",
+            "text": "<p>Our products are made from durable, high-quality materials like iron, steel, and heavy-duty plastics to ensure reliability and longevity.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "contact_7n9fXf": {
+          "type": "contact",
+          "settings": {
+            "heading": "Didn’t find your answer?",
+            "text": "<p>Don't hestitate to contact us</p>",
+            "show_phone": false,
+            "avatar_height": 60,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "rich_text_ApXdBG",
+        "question_FG8MgQ",
+        "question_B7kVHA",
+        "question_bzPPyF",
+        "rich_text_XUjVdy",
+        "question_gxx3CT",
+        "question_MzBe4J",
+        "question_RqBJrV",
+        "rich_text_DjxTik",
+        "question_tCqaEk",
+        "question_gw4FwE",
+        "question_ATiwXx",
+        "contact_7n9fXf"
+      ],
+      "settings": {
+        "style": "with-border",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "color_overlay": "#ffffff",
+        "overlay_opacity": 4,
+        "padding_top": 24,
+        "padding_bottom": 36,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "faq_gaHbwK"
+  ]
+}

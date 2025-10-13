@@ -1,0 +1,586 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "disabled": true,
+      "settings": {
+        "display_type": "selected",
+        "sort": "alphabetical",
+        "image_type": "collection",
+        "image_ratio": "square",
+        "overlay_content": true,
+        "show_products_count": true,
+        "columns": 4,
+        "columns_mobile": "1",
+        "heading": "Collections",
+        "heading_size": "title-xl tracking-heading",
+        "heading_alignment": "text-left",
+        "heading_tag": "h1",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "rich_text_HJHCdj": {
+      "type": "rich-text",
+      "settings": {
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "<strong>Find Your Solution</strong>",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "<p>Find the perfect solution to keep your operation running smooth and efficient. Browse by category, and get exactly what you need to get the job done right—every time.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 32,
+        "padding_bottom": 20,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "collection_list_DrxRqC": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_yYataJ": {
+          "type": "collection",
+          "settings": {
+            "collection": "pallet-jacks",
+            "title": "Pallet Jacks",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_DnVPTk": {
+          "type": "collection",
+          "settings": {
+            "collection": "lifting-tables",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_c7rndq": {
+          "type": "collection",
+          "settings": {
+            "collection": "stackers",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_yYataJ",
+        "collection_DnVPTk",
+        "collection_c7rndq"
+      ],
+      "custom_css": [],
+      "settings": {
+        "columns": 3,
+        "carousel_on_desktop": false,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": false,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Lifting & Positioning",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h3",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "divider": false,
+        "full_width": true,
+        "rounded": true
+      }
+    },
+    "collection_list_TQhect": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_LpnWzt": {
+          "type": "collection",
+          "settings": {
+            "collection": "moving-trolleys",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_VTrtWq": {
+          "type": "collection",
+          "settings": {
+            "collection": "electric-carts",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_CVwtRP": {
+          "type": "collection",
+          "settings": {
+            "collection": "flatbeds",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_3kAYPp": {
+          "type": "collection",
+          "settings": {
+            "collection": "load-skates",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_LpnWzt",
+        "collection_VTrtWq",
+        "collection_CVwtRP",
+        "collection_3kAYPp"
+      ],
+      "custom_css": [],
+      "settings": {
+        "columns": 3,
+        "carousel_on_desktop": true,
+        "image_type": "product",
+        "image_ratio": "square",
+        "show_products_count": false,
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "heading": "<strong>Movement & Transport</strong>",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "divider": false,
+        "full_width": true,
+        "rounded": false
+      }
+    },
+    "collection_list_qc4BBP": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_xbzbfU": {
+          "type": "collection",
+          "settings": {
+            "collection": "electric-stackers",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_mVf8gR": {
+          "type": "collection",
+          "settings": {
+            "collection": "electric-scissor-lifts",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_pdfijt": {
+          "type": "collection",
+          "settings": {
+            "collection": "electric-pallet-jacks",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_nQWVMm": {
+          "type": "collection",
+          "settings": {
+            "collection": "drum-handling-equipment",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_xbzbfU",
+        "collection_mVf8gR",
+        "collection_pdfijt",
+        "collection_nQWVMm"
+      ],
+      "settings": {
+        "columns": 4,
+        "carousel_on_desktop": false,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": false,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "<strong>Heavy Load Handling</strong>",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "collection_list_qPLgFC": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_TQUiki": {
+          "type": "collection",
+          "settings": {
+            "collection": "storage-bins-containers",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_x3bW9H": {
+          "type": "collection",
+          "settings": {
+            "collection": "utility-carts",
+            "title": "Utility Carts",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_qhLUdJ": {
+          "type": "collection",
+          "settings": {
+            "collection": "cleaning-carts",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_YLJ3jd": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "flatbed-trolleys",
+            "title": "Flatbed Trolleys",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_TQUiki",
+        "collection_x3bW9H",
+        "collection_qhLUdJ",
+        "collection_YLJ3jd"
+      ],
+      "custom_css": [],
+      "settings": {
+        "columns": 3,
+        "carousel_on_desktop": false,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": false,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "<strong>Storage & Organisation</strong>",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "divider": true,
+        "full_width": true,
+        "rounded": true
+      }
+    },
+    "collection_list_dLyYDx": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_CiiypJ": {
+          "type": "collection",
+          "settings": {
+            "collection": "platform-ladders",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_Dj36PG": {
+          "type": "collection",
+          "settings": {
+            "collection": "step-ladders",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_43UgE6": {
+          "type": "collection",
+          "settings": {
+            "collection": "safety-steps",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_CiiypJ",
+        "collection_Dj36PG",
+        "collection_43UgE6"
+      ],
+      "custom_css": [],
+      "settings": {
+        "columns": 3,
+        "carousel_on_desktop": false,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": false,
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "heading": "<strong>Access & Elevated Work</strong>",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "divider": true,
+        "full_width": true,
+        "rounded": true
+      }
+    },
+    "collection_list_iBAGth": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_VfjaJq": {
+          "type": "collection",
+          "settings": {
+            "collection": "safety-steps",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_HYeMQT": {
+          "type": "collection",
+          "settings": {
+            "collection": "safety-cones-bollards",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_dy7ByK": {
+          "type": "collection",
+          "settings": {
+            "collection": "safety-cabinets",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_VfjaJq",
+        "collection_HYeMQT",
+        "collection_dy7ByK"
+      ],
+      "custom_css": [],
+      "settings": {
+        "columns": 3,
+        "carousel_on_desktop": false,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": false,
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "heading": "Safety & Protection",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "divider": true,
+        "full_width": true,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_HJHCdj",
+    "collection_list_DrxRqC",
+    "collection_list_TQhect",
+    "collection_list_qc4BBP",
+    "collection_list_qPLgFC",
+    "collection_list_dLyYDx",
+    "collection_list_iBAGth"
+  ]
+}

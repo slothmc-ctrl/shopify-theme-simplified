@@ -1,0 +1,37 @@
+{%- comment -%}
+  Renders highlighted text
+
+  Accepts:
+  - content: {HTML} The textual content to use
+  - style: {String} The style you would like for your highlights
+  - scribble: {String} The scribble type
+  - gradient: {Boolean} Will be used for the gradient
+
+  Usage:
+  {% render 'highlighted-text', style: 'scribble', scribble: 'circle' %}
+{%- endcomment -%}
+
+{%- comment -%}
+  This version uses a single capture block to build the final output.
+  Inside the loop, it outputs complete, well-formed HTML elements,
+  which satisfies the theme-check linter.
+{%- endcomment -%}
+
+{%- if style != 'none' -%}
+  {%- capture content -%}
+    {%- assign content_parts = content | split: '<em>' -%}
+    {{- content_parts.first -}}
+
+    {%- for part in content_parts offset:1 -%}
+      {%- assign sub_parts = part | split: '</em>' -%}
+      {%- assign em_content = sub_parts[0] -%}
+      {%- assign after_em_content = sub_parts[1] -%}
+
+      <em class="highlighted-text inline-block not-italic relative{% if gradient %} with-gradient{% endif %}" is="highlighted-text" data-style="{{ style }}"
+      >{{ em_content }}{%- if style == 'scribble' -%}
+        {%- render 'icon-scribble', icon: scribble -%}
+      {%- endif -%}</em>{{- after_em_content -}}
+    {%- endfor -%}
+  {%- endcapture -%}
+{%- endif -%}
+{{- content -}}

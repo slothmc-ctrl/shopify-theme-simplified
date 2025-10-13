@@ -1,0 +1,625 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "breadcrumb_4M9Eiz": {
+          "type": "breadcrumb",
+          "settings": {
+            "show_collections_link": false
+          }
+        },
+        "liquid_ky3XgM": {
+          "type": "liquid",
+          "settings": {
+            "liquid": ""
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "product-title-md",
+            "title_size_mobile": "product-title-md",
+            "show_price": true,
+            "show_rating": false
+          }
+        },
+        "sku_9VbeAG": {
+          "type": "sku",
+          "settings": {}
+        },
+        "text_7pDjGU": {
+          "type": "text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 10,
+            "text": "﻿{{ product.metafields.custom.exc_gst.value }}",
+            "text_size": "text-sm"
+          }
+        },
+        "price_tn3Kx8": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "text_size": "text-sm"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_price": false,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "enable_back_in_stock": true,
+            "show_back_in_stock_name": true,
+            "show_back_in_stock_phone": true
+          }
+        },
+        "liquid_yr6GhR": {
+          "type": "liquid",
+          "settings": {
+            "liquid": ""
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "settings": {
+            "heading": "Hurry up!",
+            "subheading": "Sale end in:",
+            "color_text": "#e11d48",
+            "color_background": "#fff1f2",
+            "gradient_background": ""
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "show_variant_labels": true,
+            "picker_type": "dropdown",
+            "enable_color_swatches": true,
+            "color_swatch_type": "color",
+            "size_chart": "about"
+          }
+        },
+        "pickup_availability": {
+          "type": "pickup_availability",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Save it for later",
+            "show_help_desk": true,
+            "help_label": "Have a question?",
+            "help_type": "drawer",
+            "help_page": ""
+          }
+        },
+        "complementary": {
+          "type": "complementary",
+          "disabled": true,
+          "settings": {
+            "heading": "Pairs well with",
+            "product_limit": 3,
+            "show_vendor": false,
+            "show_price": true
+          }
+        },
+        "sticky_buy_button": {
+          "type": "sticky_buy_button",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "breadcrumb_4M9Eiz",
+        "liquid_ky3XgM",
+        "title",
+        "sku_9VbeAG",
+        "text_7pDjGU",
+        "price_tn3Kx8",
+        "description",
+        "buy_buttons",
+        "liquid_yr6GhR",
+        "countdown",
+        "variant_picker",
+        "pickup_availability",
+        "share",
+        "complementary",
+        "sticky_buy_button"
+      ],
+      "custom_css": [],
+      "settings": {
+        "enable_sticky_info": false,
+        "media_size": 46,
+        "gallery_layout": "thumbnail",
+        "thumbnail_position": "beside",
+        "image_ratio": "adapt",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_autoplay": true,
+        "enable_video_looping": false,
+        "mobile_layout": "partial",
+        "image_ratio_mobile": "adapt",
+        "mobile_thumbnail": false,
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "product-details": {
+      "type": "product-details",
+      "blocks": {
+        "collapsible_tab-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "wrench",
+            "icon_width": 28,
+            "heading": "Specifications",
+            "content": "",
+            "metafields": "custom.model\ncustom.capacity\ncustom.fork_height_range_\ncustom.steering_wheel_\ncustom.length_of_fork_\ncustom.big_wheel_\ncustom.warranty_\ncustom.motor\ncustom.battery_\ncustom.platform_size_length_x_width_\ncustom.load_roller_\ncustom.table_height_range_\ncustom.width_overall_forks_\ncustom.fork_rollers_\ncustom.handle_height_\ncustom.toe_plate\ncustom.total_height_\ncustom.safety_bracket_height_\ncustom.top_step_height_\ncustom.deck_size_\ncustom.adjustable_shelves_\ncustom.base_size_\ncustom.suits_steel_drums_\ncustom.rotation\ncustom.length_retracted_\ncustom.length_extended_\ncustom.basement_size_\ncustom.max_platform_height_\ncustom.min_platform_height_\ncustom.table_type_\ncustom.aisle_width_for_pallets_650_x_700_\ncustom.turning_radius_\ncustom.fork_dimensions_\ncustom.extended_mast_height_\ncustom.lift_height_\ncustom.rear_tyre_size\ncustom.size_of_fork\ncustom.operator_type\ncustom.load_centre_distance\ncustom.service_weight_without_battery_\ncustom.battery_weight_lithium_battery_\ncustom.rear_tyre_size\ncustom.front_tyre_size\ncustom.wheels_number_front_rear\ncustom.balance_wheels_dimensions_\ncustom.tyres_material\ncustom.overall_length_\ncustom.battery_size_lxwxh\ncustom.type_of_control\ncustom.sound_level_at_drive_s_ear_acc_to_en12053\ncustom.adjustable_base_legs_o_d_\ncustom.adjustable_base_legs_i_d\ncustom.drive_tire\ncustom.mast_stages\ncustom.lift_motor_rating\ncustom.drive_motor_rating\ncustom.max_gradeability_laden_unladen\ncustom.aisle_width_for_pallets_800x1200_lengthway\ncustom.aisle_width_for_pallets_1000x1200_crossway\ncustom.ground_clearance_centre_of_wheelbase\ncustom.distance_between_fork_arms\ncustom.length_of_leg\ncustom.inner_width_of_leg\ncustom.outer_width_of_leg\ncustom.overall_width\ncustom.length_to_face_forks\ncustom.height_lowered\ncustom.height_of_tiller_in_drive_position_min_max\ncustom.mast_lift_height\ncustom.rear_tread\ncustom.front_tread\ncustom.travel_speed_laden_unladen\ncustom.service_brake\ncustom.overall_size\ncustom.package_size\ncustom.description\ncustom.carrying_racking_capacity\ncustom.dynamic_capacity\ncustom.static_capacity\ncustom.open_dimensions\ncustom.closed_dimensions\ncustom.length_without_handles\ncustom.steps\ncustom.footprint_width\ncustom.footprint_depth\ncustom.platform_depth\ncustom.working_height_range\ncustom.doors\ncustom.surface_treatment\ncustom.material \ncustom.diameter\ncustom.product_weight\ncustom.lift_per_stroke\ncustom.pocket_size\ncustom.compressed_height\ncustom.lifting_plate_size\ncustom.folded_size_l_x_w_x_h_\ncustom.width_straddle_min\ncustom.fork_rollers\ncustom.overall_leg_width\ncustom.lowering_speed_laden_unladen\ncustom.lift_speed_laden_unladen\ncustom.wheel_diameter_\ncustom.lowered_mast_height_\ncustom.dimensions"
+          }
+        },
+        "collapsible_tab-4": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "alert",
+            "icon_width": 24,
+            "heading": "Features",
+            "content": "",
+            "metafields": ""
+          }
+        },
+        "collapsible_tab-3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "email",
+            "icon_width": 24,
+            "heading": "Industry Uses",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "metafields": ""
+          }
+        },
+        "collapsible_tab-2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "truck",
+            "icon_width": 10,
+            "heading": "Shipping Conditions",
+            "content": "<p><strong>Shipping & Orders</strong></p><ul><li><strong>Shipping Costs:</strong> We strive to offer fair shipping rates. If you’re in a regional area and the cost is unusually high, we’ll reach out to adjust it or let you arrange your own shipping.</li><li><strong>Stock Availability:</strong> We do our best to keep stock updated, but availability may vary. Feel free to call us to confirm before placing your order!</li></ul><p><strong>Order Process</strong></p><ul><li><strong>Order Confirmation:</strong> As soon as you place your order, you’ll receive a confirmation email. We’ll check stock and notify you if your item is ready to ship or on backorder. If unavailable, we’ll void the pre-authorization.</li><li><strong>Order Shipment:</strong> In-stock items ship within 3 business days. We’ll provide tracking where possible. If you’re in a regional or interstate area, feel free to check in at <a>sales@forwardequip.com.au</a>.</li></ul>",
+            "metafields": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab-1",
+        "collapsible_tab-4",
+        "collapsible_tab-3",
+        "collapsible_tab-2"
+      ],
+      "custom_css": [
+        "h2 {font-size: 18px;}"
+      ],
+      "settings": {
+        "style": "with-background",
+        "open_first_row": true,
+        "specifications_heading": "",
+        "heading": "Specifications",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h3",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": false,
+        "highlighted_text": "half_text",
+        "highlighted_scribble": "squiggle-underline-2",
+        "color_text": "#080715",
+        "color_background": "#f5f5f5",
+        "gradient_background": "",
+        "color_highlight": "rgba(0,0,0,0)",
+        "gradient_highlight": "",
+        "color_button_text": "#ffffff",
+        "color_button_background": "#267c1d",
+        "color_button_gradient": "",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "divider": false,
+        "full_width": true,
+        "rounded": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "product_limit": 5,
+        "columns": 3,
+        "carousel_on_desktop": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Similar Products{{ product.metafields.custom.footprint_width.value }}{{ product.metafields.custom.footprint_depth.value }}",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "#ffffff",
+        "color_button_background": "#080715",
+        "color_button_gradient": "linear-gradient(293deg, rgba(8, 7, 21, 1), rgba(7, 50, 67, 1) 100%)",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "divider": true,
+        "full_width": true,
+        "rounded": false
+      }
+    },
+    "video_with_text_8B3Xcd": {
+      "type": "video-with-text",
+      "blocks": {
+        "heading_gMtjcE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Video with text",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_ECqhcU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_cnmYWd": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_gMtjcE",
+        "text_ECqhcU",
+        "button_cnmYWd"
+      ],
+      "settings": {
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "enable_video_autoplay": false,
+        "enable_video_looping": false,
+        "image_height": "adapt",
+        "video_width": "small",
+        "layout": "video_first",
+        "text_alignment": "left",
+        "content_position": "align-self-center",
+        "video_url_mobile": "",
+        "image_height_mobile": "auto",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_background": "",
+        "gradient_background": "linear-gradient(205deg, rgba(8, 7, 21, 1) 18%, rgba(2, 77, 72, 1) 100%)",
+        "color_background_2": "",
+        "gradient_background_2": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "linear-gradient(127deg, rgba(NaN, NaN, NaN, 1) 11%, rgba(255, 70, 199, 1) 81%)",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "help-drawer": {
+      "type": "help-drawer",
+      "blocks": {
+        "content-1": {
+          "type": "content",
+          "settings": {
+            "icon": "rocket",
+            "heading": "Shipping Information",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#b45309",
+            "color_background": "#fffbeb",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        },
+        "content-2": {
+          "type": "content",
+          "settings": {
+            "icon": "headphone",
+            "heading": "Customer Support",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#0369a1",
+            "color_background": "#f0f9ff",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        },
+        "content-3": {
+          "type": "content",
+          "settings": {
+            "icon": "chat_bubble",
+            "heading": "FAQ’s",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#be123c",
+            "color_background": "#fff1f2",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        },
+        "content-4": {
+          "type": "content",
+          "settings": {
+            "icon": "phone",
+            "heading": "Contact Us",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#4d7c0f",
+            "color_background": "#f7fee7",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        }
+      },
+      "block_order": [
+        "content-1",
+        "content-2",
+        "content-3",
+        "content-4"
+      ],
+      "settings": {
+        "heading": "Need help?",
+        "description": "<p>If you have any questions, you are always welcome to contact us. We'll get back to you as soon as possible, within 24 hours on weekdays.</p>"
+      }
+    },
+    "multicolumn_with_icons_AUci89": {
+      "type": "multicolumn-with-icons",
+      "blocks": {
+        "column_Gci6nH": {
+          "type": "column",
+          "settings": {
+            "icon": "box",
+            "custom_icon": "",
+            "heading": "Shipping info",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_PX6zbf": {
+          "type": "column",
+          "settings": {
+            "icon": "shield",
+            "custom_icon": "",
+            "heading": "Secure payments",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_dhHc6i": {
+          "type": "column",
+          "settings": {
+            "icon": "award",
+            "custom_icon": "",
+            "heading": "Australian standards compliant",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_8dzUDU": {
+          "type": "column",
+          "settings": {
+            "icon": "users",
+            "custom_icon": "",
+            "heading": "AU warranty & support",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_Gci6nH",
+        "column_PX6zbf",
+        "column_dhHc6i",
+        "column_8dzUDU"
+      ],
+      "disabled": true,
+      "settings": {
+        "style": "with-border",
+        "columns": 4,
+        "text_alignment": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": true,
+        "full_width": true,
+        "rounded": false
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "question-1": {
+          "type": "question",
+          "settings": {
+            "title": "How is shipping calculated?",
+            "text": "<p>Shipping costs are based on the total weight of the items in your cart.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-2": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Which locations do you ship to?</strong>",
+            "text": "<p>Shipping available across Australia, including regional and remote areas. Contact our team for location inquiries.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-3": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>How long does delivery take?</strong>",
+            "text": "<p>Delivery times vary depending on your location and the size of your order. Standard deliveries typically take 1-3 business days, while larger or heavy items may take a bit longer.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-4": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Do your products come with a warranty?</strong>",
+            "text": "<p>Most products come with a 1  year warranty, any issues you may have please give us a call and we can discuss options, e.g. spare parts, troubleshooting, returning to warehouse.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-5": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>How do I choose the right product?</strong>",
+            "text": "<p>Each product page includes detailed specifications to help you decide. If you’re unsure, our friendly support team are available to guide you based on your needs.</p><p>If you have any other questions, don’t hesitate to get in touch with us—we’re here to help</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "contact": {
+          "type": "contact",
+          "settings": {
+            "heading": "Didn’t find your answer?",
+            "text": "<p>Don't hestitate to contact us</p>",
+            "show_phone": false,
+            "avatar_height": 60,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "question-1",
+        "question-2",
+        "question-3",
+        "question-4",
+        "question-5",
+        "contact"
+      ],
+      "settings": {
+        "style": "with-border",
+        "heading": "FAQs",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h3",
+        "subheading": "",
+        "description": "<p><strong>Please read our </strong><a href=\"#\" title=\"FAQ's\"><strong>FAQs</strong></a><strong> page to find out more.</strong></p>",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": false,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#ffffff",
+        "color_background": "#080715",
+        "gradient_background": "linear-gradient(52deg, rgba(11, 8, 21, 1), rgba(8, 7, 21, 1) 38%, rgba(7, 57, 75, 1) 99%)",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "#080715",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#ffffff",
+        "overlay_opacity": 4,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "divider": false,
+        "narrow": false,
+        "rounded": true
+      }
+    }
+  },
+  "order": [
+    "main-product",
+    "product-details",
+    "product-recommendations",
+    "video_with_text_8B3Xcd",
+    "help-drawer",
+    "multicolumn_with_icons_AUci89",
+    "faq"
+  ]
+}

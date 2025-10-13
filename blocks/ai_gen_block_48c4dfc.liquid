@@ -1,0 +1,836 @@
+{% doc %}
+  @prompt
+    Category icons spread horizontally , will need more categories, allow spacing for 10-12 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-category-icons-{{ ai_gen_id }} {
+    width: 100%;
+    padding: {{ block.settings.section_padding_top }}px 0 {{ block.settings.section_padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-category-icons-container-{{ ai_gen_id }} {
+    max-width: {{ settings.page_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-category-icons-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.columns_desktop }}, 1fr);
+    gap: {{ block.settings.spacing }}px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .ai-category-icon-item-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: {{ block.settings.text_color }};
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: 100%;
+    max-width: {{ block.settings.max_width }}px;
+  }
+
+  .ai-category-icon-item-{{ ai_gen_id }}:hover {
+    transform: translateY(-{{ block.settings.hover_lift }}px);
+    opacity: 0.8;
+  }
+
+  .ai-category-icon-wrapper-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    border-radius: {% if block.settings.icon_shape == 'circle' %}50%{% elsif block.settings.icon_shape == 'rounded' %}12px{% else %}0{% endif %};
+    background-color: {{ block.settings.icon_background_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: {{ block.settings.text_spacing }}px;
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+    box-shadow: {% if block.settings.shadow_opacity > 0 %}0 {{ block.settings.shadow_vertical }}px {{ block.settings.shadow_blur }}px rgba({{ block.settings.shadow_color | color_extract: 'red' }}, {{ block.settings.shadow_color | color_extract: 'green' }}, {{ block.settings.shadow_color | color_extract: 'blue' }}, {{ block.settings.shadow_opacity | divided_by: 100.0 }}){% else %}none{% endif %};
+  }
+
+  .ai-category-icon-wrapper-{{ ai_gen_id }} img {
+    width: {{ block.settings.icon_size | times: 0.6 }}px;
+    height: {{ block.settings.icon_size | times: 0.6 }}px;
+    object-fit: contain;
+  }
+
+  .ai-category-icon-wrapper-{{ ai_gen_id }} svg {
+    width: {{ block.settings.icon_size | times: 0.6 }}px;
+    height: {{ block.settings.icon_size | times: 0.6 }}px;
+    color: {{ block.settings.icon_color }};
+  }
+
+  .ai-category-icon-title-{{ ai_gen_id }} {
+    font-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+    font-weight: {{ settings.type_header_font.weight }};
+    font-size: {{ block.settings.title_size }}px;
+    line-height: 1.2;
+    margin: 0;
+    color: {{ block.settings.text_color }};
+    {% if settings.type_header_capitalize %}text-transform: uppercase;{% endif %}
+    letter-spacing: {{ settings.type_header_spacing | divided_by: 1000.0 }}em;
+  }
+
+  .ai-category-icon-description-{{ ai_gen_id }} {
+    font-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+    font-weight: {{ settings.type_body_font.weight }};
+    font-size: {{ block.settings.description_size }}px;
+    line-height: {{ settings.type_body_line_height }};
+    margin: {{ block.settings.description_spacing }}px 0 0;
+    color: {{ block.settings.description_color }};
+    letter-spacing: {{ settings.type_body_spacing | divided_by: 1000.0 }}em;
+  }
+
+  .ai-category-icon-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: inherit;
+  }
+
+  .ai-category-icon-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    color: #ccc;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-category-icons-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.columns_mobile }}, 1fr);
+      gap: {{ block.settings.spacing | times: 0.8 }}px;
+    }
+
+    .ai-category-icon-wrapper-{{ ai_gen_id }} {
+      width: {{ block.settings.icon_size | times: 0.8 }}px;
+      height: {{ block.settings.icon_size | times: 0.8 }}px;
+    }
+
+    .ai-category-icon-wrapper-{{ ai_gen_id }} img,
+    .ai-category-icon-wrapper-{{ ai_gen_id }} svg {
+      width: {{ block.settings.icon_size | times: 0.48 }}px;
+      height: {{ block.settings.icon_size | times: 0.48 }}px;
+    }
+
+    .ai-category-icon-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.9 }}px;
+    }
+
+    .ai-category-icon-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-category-icons-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-category-icons-container-{{ ai_gen_id }}">
+    <div class="ai-category-icons-grid-{{ ai_gen_id }}">
+      {% for i in (1..12) %}
+        {% liquid
+          assign icon_key = 'category_' | append: i | append: '_icon'
+          assign title_key = 'category_' | append: i | append: '_title'
+          assign description_key = 'category_' | append: i | append: '_description'
+          assign link_key = 'category_' | append: i | append: '_link'
+          assign enabled_key = 'category_' | append: i | append: '_enabled'
+
+          assign icon = block.settings[icon_key]
+          assign title = block.settings[title_key]
+          assign description = block.settings[description_key]
+          assign link = block.settings[link_key]
+          assign enabled = block.settings[enabled_key]
+        %}
+
+        {% if enabled %}
+          {% if link != blank %}
+            <a href="{{ link }}" class="ai-category-icon-item-{{ ai_gen_id }}">
+          {% else %}
+            <div class="ai-category-icon-item-{{ ai_gen_id }}">
+          {% endif %}
+            
+            <div class="ai-category-icon-wrapper-{{ ai_gen_id }}">
+              {% if icon != blank %}
+                <img
+                  src="{{ icon | image_url: width: 200 }}"
+                  alt="{{ title | escape }}"
+                  loading="lazy"
+                  width="200"
+                  height="200"
+                >
+              {% else %}
+                <div class="ai-category-icon-placeholder-{{ ai_gen_id }}">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="9" cy="9" r="2"/>
+                    <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                  </svg>
+                </div>
+              {% endif %}
+            </div>
+
+            {% if title != blank %}
+              <h3 class="ai-category-icon-title-{{ ai_gen_id }}">{{ title }}</h3>
+            {% endif %}
+
+            {% if description != blank %}
+              <p class="ai-category-icon-description-{{ ai_gen_id }}">{{ description }}</p>
+            {% endif %}
+
+          {% if link != blank %}
+            </a>
+          {% else %}
+            </div>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Category icons",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "label": "Columns on desktop",
+      "default": 6
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "options": [
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "min": 5,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Spacing between items",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 80,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Maximum item width",
+      "default": 150
+    },
+    {
+      "type": "header",
+      "content": "Icon style"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 60
+    },
+    {
+      "type": "select",
+      "id": "icon_shape",
+      "label": "Icon shape",
+      "options": [
+        {
+          "value": "square",
+          "label": "Square"
+        },
+        {
+          "value": "rounded",
+          "label": "Rounded"
+        },
+        {
+          "value": "circle",
+          "label": "Circle"
+        }
+      ],
+      "default": "circle"
+    },
+    {
+      "type": "color",
+      "id": "icon_background_color",
+      "label": "Icon background color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#080715"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 3,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "header",
+      "content": "Shadow"
+    },
+    {
+      "type": "range",
+      "id": "shadow_opacity",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "label": "Shadow opacity",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "shadow_vertical",
+      "min": 0,
+      "max": 10,
+      "step": 2,
+      "unit": "px",
+      "label": "Shadow vertical offset",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "shadow_blur",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Shadow blur",
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "shadow_color",
+      "label": "Shadow color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Text style"
+    },
+    {
+      "type": "range",
+      "id": "text_spacing",
+      "min": 5,
+      "max": 20,
+      "step": 5,
+      "unit": "px",
+      "label": "Space between icon and text",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Title color",
+      "default": "#080715"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 8,
+      "max": 14,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "description_spacing",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Space between title and description",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Hover effects"
+    },
+    {
+      "type": "range",
+      "id": "hover_lift",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Hover lift effect",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Section style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Category 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "category_1_enabled",
+      "label": "Enable category 1",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "category_1_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "category_1_title",
+      "label": "Title",
+      "default": "Category 1"
+    },
+    {
+      "type": "text",
+      "id": "category_1_description",
+      "label": "Description"
+    },
+    {
+      "type": "url",
+      "id": "category_1_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Category 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "category_2_enabled",
+      "label": "Enable category 2",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "category_2_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "category_2_title",
+      "label": "Title",
+      "default": "Category 2"
+    },
+    {
+      "type": "text",
+      "id": "category_2_description",
+      "label": "Description"
+    },
+    {
+      "type": "url",
+      "id": "category_2_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Category 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "category_3_enabled",
+      "label": "Enable category 3",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "category_3_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "category_3_title",
+      "label": "Title",
+      "default": "Category 3"
+    },
+    {
+      "type": "text",
+      "id": "category_3_description",
+      "label": "Description"
+    },
+    {
+      "type": "url",
+      "id": "category_3_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Category 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "category_4_enabled",
+      "label": "Enable category 4",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "category_4_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "category_4_title",
+      "label": "Title",
+      "default": "Category 4"
+    },
+    {
+      "type": "text",
+      "id": "category_4_description",
+      "label": "Description"
+    },
+    {
+      "type": "url",
+      "id": "category_4_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Category 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "category_5_enabled",
+      "label": "Enable category 5",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "category_5_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "category_5_title",
+      "label": "Title",
+      "default": "Category 5"
+    },
+    {
+      "type": "text",
+      "id": "category_5_description",
+      "label": "Description"
+    },
+    {
+      "type": "url",
+      "id": "category_5_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Category 6"
+    },
+    {
+      "type": "checkbox",
+      "id": "category_6_enabled",
+      "label": "Enable category 6",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "category_6_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "category_6_title",
+      "label": "Title",
+      "default": "Category 6"
+    },
+    {
+      "type": "text",
+      "id": "category_6_description",
+      "label": "Description"
+    },
+    {
+      "type": "url",
+      "id": "category_6_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Category 7"
+    },
+    {
+      "type": "checkbox",
+      "id": "category_7_enabled",
+      "label": "Enable category 7",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "category_7_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "category_7_title",
+      "label": "Title",
+      "default": "Category 7"
+    },
+    {
+      "type": "text",
+      "id": "category_7_description",
+      "label": "Description"
+    },
+    {
+      "type": "url",
+      "id": "category_7_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Category 8"
+    },
+    {
+      "type": "checkbox",
+      "id": "category_8_enabled",
+      "label": "Enable category 8",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "category_8_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "category_8_title",
+      "label": "Title",
+      "default": "Category 8"
+    },
+    {
+      "type": "text",
+      "id": "category_8_description",
+      "label": "Description"
+    },
+    {
+      "type": "url",
+      "id": "category_8_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Category 9"
+    },
+    {
+      "type": "checkbox",
+      "id": "category_9_enabled",
+      "label": "Enable category 9",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "category_9_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "category_9_title",
+      "label": "Title",
+      "default": "Category 9"
+    },
+    {
+      "type": "text",
+      "id": "category_9_description",
+      "label": "Description"
+    },
+    {
+      "type": "url",
+      "id": "category_9_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Category 10"
+    },
+    {
+      "type": "checkbox",
+      "id": "category_10_enabled",
+      "label": "Enable category 10",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "category_10_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "category_10_title",
+      "label": "Title",
+      "default": "Category 10"
+    },
+    {
+      "type": "text",
+      "id": "category_10_description",
+      "label": "Description"
+    },
+    {
+      "type": "url",
+      "id": "category_10_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Category 11"
+    },
+    {
+      "type": "checkbox",
+      "id": "category_11_enabled",
+      "label": "Enable category 11",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "category_11_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "category_11_title",
+      "label": "Title",
+      "default": "Category 11"
+    },
+    {
+      "type": "text",
+      "id": "category_11_description",
+      "label": "Description"
+    },
+    {
+      "type": "url",
+      "id": "category_11_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Category 12"
+    },
+    {
+      "type": "checkbox",
+      "id": "category_12_enabled",
+      "label": "Enable category 12",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "category_12_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "category_12_title",
+      "label": "Title",
+      "default": "Category 12"
+    },
+    {
+      "type": "text",
+      "id": "category_12_description",
+      "label": "Description"
+    },
+    {
+      "type": "url",
+      "id": "category_12_link",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category icons"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,597 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-xl tracking-heading",
+        "heading_alignment": "text-left",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "image-with-text-overlay": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "ABOUT FORWARD EQUIPMENT",
+            "heading_size": "title-xl tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading"
+      ],
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/ISTOCK_PALLET_JACK.png",
+        "image_height": "750px",
+        "content_width": "medium",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#000000",
+        "overlay_opacity": 50,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": true,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "images-with-text": {
+      "type": "images-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Forwards For You. Always",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "basic-underline"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At Forward Equipment, we’re more than just suppliers – we’re committed to equipping businesses with reliable, high-quality tools that stand the test of time. We believe that top-tier equipment shouldn’t come with a steep price tag, which is why we focus on delivering the best products at competitive prices without compromising on safety or standards. </p><p>Our dedication stems from a genuine passion for helping businesses run smoothly and safely, ensuring that every product we provide meets the strictest Australian standards. At the heart of Forward Equipment, you’ll find a team driven by integrity, ready to support your work with solutions built to last.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Find Your Solution",
+            "button_link": "shopify://collections",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/pexels-theshuttervision-9984691.jpg",
+        "image_ratio": "portrait",
+        "image_width": "small",
+        "layout": "image_first",
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 120,
+        "padding_bottom": 100,
+        "divider": false,
+        "full_width": false,
+        "rounded": true,
+        "enable_parallax": true
+      }
+    },
+    "portfolio": {
+      "type": "portfolio",
+      "blocks": {
+        "profile-1": {
+          "type": "profile",
+          "settings": {
+            "heading": "Example title",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<br/><br/>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store. Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "color_background": "#000000"
+          }
+        },
+        "profile-2": {
+          "type": "profile",
+          "settings": {
+            "heading": "Example title",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<br/><br/>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store. Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "color_background": "#000000"
+          }
+        },
+        "profile-3": {
+          "type": "profile",
+          "settings": {
+            "heading": "Example title",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<br/><br/>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store. Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "color_background": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "profile-1",
+        "profile-2",
+        "profile-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "columns": 4,
+        "carousel_on_desktop": false,
+        "layout": "grid",
+        "image_ratio": "portrait",
+        "image_ratio_mobile": "portrait",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Talk about your <em>brand</em>",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left justify-start",
+        "heading_tag": "h2",
+        "subheading": "Add a tagline",
+        "description": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "scribble",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "#ccd8b5",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "scrolling-text": {
+      "type": "scrolling-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<em><strong>Australian Standards Certified</strong></em>",
+            "text_size": 160,
+            "text_font": "body",
+            "highlighted_text": "stencil",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "settings": {
+        "direction": "left",
+        "speed": 20,
+        "grid_horizontal": 70,
+        "enable_twin": false,
+        "enable_parallax": true,
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "rounded": false
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "text": "<p>Forward Equipment has truly set a new standard. The quality of their products is unmatched, and everything we’ve ordered has held up incredibly well in a demanding warehouse environment. It's clear they prioritise durability and reliability, and that’s exactly what we need.</p>",
+            "author": "James Collier",
+            "author_info": "Operations Manager",
+            "author_url": "",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "testimonial_NPyhRj": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "text": "<p>From start to finish, the team at Forward Equipment went above and beyond to help us find exactly what we were after. Their customer service was professional, attentive, and knowledgeable, making the whole process smooth and stress-free. We couldn’t be happier with our experience.</p>",
+            "author": "Sarah Bennett",
+            "author_info": "Purchasing Coordinator",
+            "author_url": "",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "testimonial_UGjd8y": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "text": "<p>Switching to Forward Equipment has been a game-changer. Not only are their prices competitive, but the product quality and overall service have exceeded our expectations. It’s reassuring to know we’re working with a company that values our satisfaction as much as we do.</p>",
+            "author": "Mark Liu",
+            "author_info": "Warehouse Supervisor",
+            "author_url": "",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "testimonial_Cn6qbj": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "text": "<p>Working with Forward Equipment has streamlined our operations. The equipment is reliable, and the team’s support in selecting the right products for our needs was invaluable. It’s rare to find this level of dedication to both quality and customer care in the industry.</p>",
+            "author": "Emma Clarke",
+            "author_info": "Logistics Director",
+            "author_url": "",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial",
+        "testimonial_NPyhRj",
+        "testimonial_UGjd8y",
+        "testimonial_Cn6qbj"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 84,
+        "padding_bottom": 120,
+        "divider": false,
+        "rounded": false
+      }
+    },
+    "timeline": {
+      "type": "timeline",
+      "blocks": {
+        "content-1": {
+          "type": "content",
+          "settings": {
+            "subheading": "2019",
+            "heading": "Image with text",
+            "heading_tag": "h2",
+            "text": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "content-2": {
+          "type": "content",
+          "settings": {
+            "subheading": "2020",
+            "heading": "Image with text",
+            "heading_tag": "h2",
+            "text": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "content-3": {
+          "type": "content",
+          "settings": {
+            "subheading": "2021",
+            "heading": "Image with text",
+            "heading_tag": "h2",
+            "text": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "content-4": {
+          "type": "content",
+          "settings": {
+            "subheading": "2022",
+            "heading": "Image with text",
+            "heading_tag": "h2",
+            "text": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "content-5": {
+          "type": "content",
+          "settings": {
+            "subheading": "2024",
+            "heading": "Image with text",
+            "heading_tag": "h2",
+            "text": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "content-1",
+        "content-2",
+        "content-3",
+        "content-4",
+        "content-5"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_ratio": "portrait",
+        "image_ratio_mobile": "wide",
+        "heading": "Example heading",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#ffffff",
+        "color_background": "#171717",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": true
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Partners",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline"
+          }
+        }
+      },
+      "block_order": [
+        "heading"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "#fafafa",
+        "gradient_background": "",
+        "color_highlight": "#c5e8b8",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 120,
+        "padding_bottom": 20,
+        "divider": false,
+        "narrow": true,
+        "rounded": true
+      }
+    },
+    "logo-list": {
+      "type": "logo-list",
+      "blocks": {
+        "logo-1": {
+          "type": "logo",
+          "settings": {
+            "height": 60,
+            "link": ""
+          }
+        },
+        "logo-2": {
+          "type": "logo",
+          "settings": {
+            "height": 60,
+            "link": ""
+          }
+        },
+        "logo-3": {
+          "type": "logo",
+          "settings": {
+            "height": 60,
+            "link": ""
+          }
+        },
+        "logo-4": {
+          "type": "logo",
+          "settings": {
+            "height": 60,
+            "link": ""
+          }
+        },
+        "logo-5": {
+          "type": "logo",
+          "settings": {
+            "height": 60,
+            "link": ""
+          }
+        },
+        "logo-6": {
+          "type": "logo",
+          "settings": {
+            "height": 60,
+            "link": ""
+          }
+        },
+        "logo-7": {
+          "type": "logo",
+          "settings": {
+            "height": 60,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo-1",
+        "logo-2",
+        "logo-3",
+        "logo-4",
+        "logo-5",
+        "logo-6",
+        "logo-7"
+      ],
+      "settings": {
+        "layout": "marquee",
+        "grid_horizontal": 120,
+        "direction": "right",
+        "speed": 10,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "#fafafa",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 60,
+        "padding_bottom": 120,
+        "divider": false,
+        "full_width": true,
+        "rounded": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image-with-text-overlay",
+    "images-with-text",
+    "portfolio",
+    "scrolling-text",
+    "testimonials",
+    "timeline",
+    "rich-text",
+    "logo-list"
+  ]
+}

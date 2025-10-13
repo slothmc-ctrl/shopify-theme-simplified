@@ -1,0 +1,872 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "video-with-text-overlay": {
+      "type": "video-with-text-overlay",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>material handling equipment  </strong>                              + workplace essentials",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your one-stop solution for premium material handling equipment and workplace essentials, offering expert guidance and fast delivery across Australia.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 16,
+            "text_font": "body",
+            "secondary_color": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_AP8x8d": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        },
+        "button_JBAzBG": {
+          "type": "button",
+          "settings": {
+            "button_label": "View products",
+            "button_link": "shopify://collections/all",
+            "button_style": "primary",
+            "button_size": "sm",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button_AP8x8d",
+        "button_JBAzBG"
+      ],
+      "custom_css": [],
+      "settings": {
+        "transparent_header": true,
+        "video": "shopify://files/videos/ROYALTY FREE WAREHOUSE VIDEO.mp4",
+        "video_url": "",
+        "description": "",
+        "enable_video_autoplay": true,
+        "enable_video_looping": true,
+        "image_height": "900px",
+        "content_width": "small",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "video_url_mobile": "",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-center justify-start",
+        "text_alignment_mobile": "center",
+        "color_text": "#ffffff",
+        "color_highlight": "#ffffff",
+        "gradient_highlight": "",
+        "color_button_text": "#ffffff",
+        "color_button_background": "#2563eb",
+        "color_button_gradient": "",
+        "color_overlay": "#080715",
+        "overlay_opacity": 80,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false
+      }
+    },
+    "1759050429b63b44f9": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_48c4dfc_kxFXd3": {
+          "type": "ai_gen_block_48c4dfc",
+          "settings": {
+            "columns_desktop": 6,
+            "columns_mobile": "3",
+            "spacing": 5,
+            "max_width": 80,
+            "icon_size": 85,
+            "icon_shape": "circle",
+            "icon_background_color": "#f5f5f5",
+            "icon_color": "#080715",
+            "border_width": 0,
+            "border_color": "#e5e5e5",
+            "shadow_opacity": 5,
+            "shadow_vertical": 2,
+            "shadow_blur": 0,
+            "shadow_color": "#000000",
+            "text_spacing": 10,
+            "title_size": 14,
+            "text_color": "#080715",
+            "description_size": 12,
+            "description_color": "#666666",
+            "description_spacing": 2,
+            "hover_lift": 0,
+            "background_color": "#ffffff",
+            "section_padding_top": 40,
+            "section_padding_bottom": 20,
+            "category_1_enabled": true,
+            "category_1_icon": "shopify://shop_images/pallet-jack-icon_1.png",
+            "category_1_title": "Pallet Jacks",
+            "category_1_description": "",
+            "category_1_link": "",
+            "category_2_enabled": true,
+            "category_2_icon": "shopify://shop_images/box.png",
+            "category_2_title": "Trolleys",
+            "category_2_description": "",
+            "category_2_link": "",
+            "category_3_enabled": true,
+            "category_3_icon": "shopify://shop_images/scissor-lift.png",
+            "category_3_title": "Scissor Lift",
+            "category_3_description": "",
+            "category_3_link": "",
+            "category_4_enabled": true,
+            "category_4_icon": "shopify://shop_images/ladder.png",
+            "category_4_title": "Ladders",
+            "category_4_description": "",
+            "category_4_link": "",
+            "category_5_enabled": true,
+            "category_5_icon": "shopify://shop_images/product.png",
+            "category_5_title": "Storage",
+            "category_5_description": "",
+            "category_5_link": "",
+            "category_6_enabled": true,
+            "category_6_icon": "shopify://shop_images/team.png",
+            "category_6_title": "Safety",
+            "category_6_description": "",
+            "category_6_link": "",
+            "category_7_enabled": false,
+            "category_7_title": "Storage",
+            "category_7_description": "",
+            "category_7_link": "",
+            "category_8_enabled": false,
+            "category_8_title": "Category 8",
+            "category_8_description": "",
+            "category_8_link": "",
+            "category_9_enabled": false,
+            "category_9_title": "Category 9",
+            "category_9_description": "",
+            "category_9_link": "",
+            "category_10_enabled": false,
+            "category_10_title": "Category 10",
+            "category_10_description": "",
+            "category_10_link": "",
+            "category_11_enabled": false,
+            "category_11_icon": "shopify://shop_images/pallet-jack-icon_1.png",
+            "category_11_title": "Category 11",
+            "category_11_description": "",
+            "category_11_link": "",
+            "category_12_enabled": false,
+            "category_12_title": "Category 12",
+            "category_12_description": "",
+            "category_12_link": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_48c4dfc_kxFXd3"
+      ],
+      "custom_css": [],
+      "settings": {}
+    },
+    "multicolumn_with_icons_4GRHX4": {
+      "type": "multicolumn-with-icons",
+      "blocks": {
+        "column_TyTDEU": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "custom_icon": "",
+            "heading": "<strong>Fast Delivery Australia Wide</strong>",
+            "text": "<p>Fast and reliable delivery in Australia, with orders arriving in 1-3 business days and real-time updates on any delays.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_xGgwGW": {
+          "type": "column",
+          "settings": {
+            "icon": "shield",
+            "custom_icon": "",
+            "heading": "<strong>Australian Compliant</strong>",
+            "text": "<p>Products meet Australian standards wherever required, for top-tier quality, safety, and reliability.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_apdcBU": {
+          "type": "column",
+          "settings": {
+            "icon": "planet_2",
+            "custom_icon": "",
+            "heading": "<strong>Network of suppliers</strong>",
+            "text": "<p>Unable to find the product you need? Don't worry, we can find it for you. Contact us for products you can not find.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_TyTDEU",
+        "column_xGgwGW",
+        "column_apdcBU"
+      ],
+      "custom_css": [
+        ".column__icon {color: #009d9a;}"
+      ],
+      "settings": {
+        "style": "with-background",
+        "columns": 3,
+        "text_alignment": "center",
+        "heading": "",
+        "heading_size": "title-lg tracking-heading",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h1",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "basic-underline",
+        "color_text": "#ffffff",
+        "color_background": "rgba(0,0,0,0)",
+        "gradient_background": "linear-gradient(60deg, rgba(8, 7, 21, 1) 40%, rgba(11, 8, 21, 1) 40.288%, rgba(0, 78, 71, 1) 100%)",
+        "color_highlight": "#ff0000",
+        "gradient_highlight": "",
+        "color_button_text": "#ff0000",
+        "color_button_background": "#ff0000",
+        "color_button_gradient": "linear-gradient(180deg, rgba(240, 69, 87, 1), rgba(221, 39, 57, 1) 100%)",
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "divider": true,
+        "full_width": true,
+        "rounded": true
+      }
+    },
+    "collection-list": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_hAXeUy": {
+          "type": "collection",
+          "settings": {
+            "collection": "manual-electric-pallet-jacks",
+            "image": "shopify://shop_images/AC25-685.jpg",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_QN4afp": {
+          "type": "collection",
+          "settings": {
+            "collection": "hand-trucks-moving-trolleys",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_WhUxpG": {
+          "type": "collection",
+          "settings": {
+            "collection": "manual-electric-stackers-and-lifters",
+            "image": "shopify://shop_images/SFH10W.jpg",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_GDQXLx": {
+          "type": "collection",
+          "settings": {
+            "collection": "manual-electric-scissor-lift-tables-and-trolleys",
+            "image": "shopify://shop_images/TF50.jpg",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_pXCx6X": {
+          "type": "collection",
+          "settings": {
+            "collection": "flatbeds-utility-carts",
+            "image": "shopify://shop_images/TS1AXL-1.webp",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_YxURHF": {
+          "type": "collection",
+          "settings": {
+            "collection": "expandable-conveyors",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_FgqhNW": {
+          "type": "collection",
+          "settings": {
+            "collection": "drum-handling-equipment",
+            "image": "shopify://shop_images/NBF35.jpg",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_imPDi3": {
+          "type": "collection",
+          "settings": {
+            "collection": "electric-carts",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_dEmdV6": {
+          "type": "collection",
+          "settings": {
+            "collection": "housekeeping-and-cleaning-carts",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_7nWTkc": {
+          "type": "collection",
+          "settings": {
+            "collection": "ladders-and-access",
+            "image": "shopify://shop_images/MONOP2_4_34d4a520-c0ad-4cb8-8792-c5ec4933afaf.jpg",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_LaAAN6": {
+          "type": "collection",
+          "settings": {
+            "collection": "load-skates",
+            "image": "shopify://shop_images/FY12.jpg",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_J8zRwy": {
+          "type": "collection",
+          "settings": {
+            "collection": "pallet-levellers-1",
+            "image": "shopify://shop_images/PLG1C_1.jpg",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_tz9Htp": {
+          "type": "collection",
+          "settings": {
+            "collection": "plastic-bins-and-storage-containers",
+            "image": "shopify://shop_images/HMT1160KSV_5.jpg",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_6TYfxQ": {
+          "type": "collection",
+          "settings": {
+            "collection": "safety-equipment-and-dangerous-goods-storage",
+            "image": "shopify://shop_images/FGC250.jpg",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "all-equipment",
+            "image": "shopify://shop_images/material-handling-category.jpg",
+            "title": "All Products",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#080715",
+            "color_overlay": "rgba(0,0,0,0)",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "collection_hAXeUy",
+        "collection_QN4afp",
+        "collection_WhUxpG",
+        "collection_GDQXLx",
+        "collection_pXCx6X",
+        "collection_YxURHF",
+        "collection_FgqhNW",
+        "collection_imPDi3",
+        "collection_dEmdV6",
+        "collection_7nWTkc",
+        "collection_LaAAN6",
+        "collection_J8zRwy",
+        "collection_tz9Htp",
+        "collection_6TYfxQ",
+        "collection-1"
+      ],
+      "custom_css": [],
+      "settings": {
+        "columns": 5,
+        "carousel_on_desktop": false,
+        "image_type": "product",
+        "image_ratio": "square",
+        "show_products_count": true,
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "PRODUCT TYPE",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "basic-underline",
+        "color_text": "#080715",
+        "color_background": "rgba(0,0,0,0)",
+        "gradient_background": "",
+        "color_highlight": "rgba(0,0,0,0)",
+        "gradient_highlight": "",
+        "color_button_text": "rgba(0,0,0,0)",
+        "color_button_background": "rgba(0,0,0,0)",
+        "color_button_gradient": "linear-gradient(310deg, rgba(8, 7, 21, 1) 15%, rgba(0, 75, 70, 1) 85%)",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "divider": true,
+        "full_width": true,
+        "rounded": true
+      }
+    },
+    "featured-collections": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "manual-electric-pallet-jacks",
+            "products": [
+              "2500kg-pallet-jack-pallet-truck-fork-width-520mm-copy",
+              "1500kg-heavy-duty-electric-pallet-jack-lithium-power",
+              "2000kg-pallet-jack-pallet-truck-with-scale-fork-width-692mm",
+              "2000kg-economic-electric-lithium-power-pallet-truck"
+            ],
+            "title": ""
+          }
+        },
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "manual-electric-stackers-and-lifters",
+            "products": [],
+            "title": "Stackers"
+          }
+        },
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "flatbeds-utility-carts",
+            "products": [],
+            "title": "Platform Trolleys"
+          }
+        }
+      },
+      "block_order": [
+        "collection-3",
+        "collection-1",
+        "collection-2"
+      ],
+      "custom_css": [],
+      "settings": {
+        "product_limit": 12,
+        "columns": 3,
+        "carousel_on_desktop": true,
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "heading": "MOST POPULAR",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#080715",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "#ffffff",
+        "color_button_background": "rgba(0,0,0,0)",
+        "color_button_gradient": "linear-gradient(338deg, rgba(8, 7, 21, 1) 1%, rgba(0, 75, 70, 1) 100%)",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "divider": false,
+        "full_width": true,
+        "rounded": false
+      }
+    },
+    "rich-text-1": {
+      "type": "rich-text",
+      "blocks": {
+        "image_XUVRfW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/vecteezy_portrait-of-employee-female-warehouse-professional-worker-in_50037414.jpg",
+            "image_width": "full_width",
+            "image_max_width": 50,
+            "image_max_width_mobile": 50
+          }
+        },
+        "text": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>At Forward Equipment, we don’t just supply equipment – we provide industrial solutions designed to improve efficiency, safety, and reliability in your business operations. Using the right material handling equipment for the right application can increase productivity, reduce workplace risks, and allow you to do what you do best.</p><p>Our range of high-quality products are carefully selected to meet the demands of Australian businesses, all while maintaining competitive pricing. Every product is built to meet strict Australian standards, ensuring safety and performance in even the most challenging environments.</p><p>With a focus on delivering tailored solutions, our team is here to help you choose the right equipment for your needs, so you can keep your operations running smoothly and effectively. At Forward Equipment, we’re committed to supporting your success with tools and expertise you can trust.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 34,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "image_XUVRfW",
+        "text"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "<strong>Forward Equipment - Solutions That Work </strong>",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h3",
+        "subheading": "",
+        "description": "<p>At Forward Equipment, we provide industrial solutions that enhance efficiency, safety, and reliability. The right material handling equipment boosts productivity and reduces risks, letting you focus on what you do best. Our high-quality products meet Australian standards and offer competitive pricing. With tailored solutions and expert support, we help keep your operations running smoothly.</p><p>With a focus on delivering tailored solutions, our team is here to help you choose the right equipment for your needs. At Forward Equipment, we’re committed to supporting your success with tools and expertise you can trust.</p>",
+        "button_label": "",
+        "button_link": "shopify://collections",
+        "button_external": false,
+        "button_icon": false,
+        "highlighted_text": "scribble",
+        "highlighted_scribble": "basic-underline",
+        "color_text": "#ffffff",
+        "color_background": "#ffffff",
+        "gradient_background": "linear-gradient(311deg, rgba(0, 75, 70, 1), rgba(8, 7, 21, 1) 47%)",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "#080715",
+        "color_button_background": "#fffdfd",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "divider": true,
+        "narrow": false,
+        "rounded": true
+      }
+    },
+    "rich_text_wdANXm": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_bn6NmN": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>NEED SOME HELP?</strong>",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_NJGiN9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our Find Your Solution Page is designed to make it easy for you to find exactly what you're looking for</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_bbzAwD": {
+          "type": "button",
+          "settings": {
+            "button_label": "Find Your Solution",
+            "button_link": "shopify://collections",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_bn6NmN",
+        "text_NJGiN9",
+        "button_bbzAwD"
+      ],
+      "custom_css": [
+        "h2 {font-size: 30px;}"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#080715",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "color_highlight": "#080715",
+        "gradient_highlight": "",
+        "color_button_text": "#fffdfd",
+        "color_button_background": "#080715",
+        "color_button_gradient": "",
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "testimonials-banner": {
+      "type": "testimonials-banner",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "text": "<p>We were sick of sourcing our warehouse equipment from sketchy sellers. Been using Forward Equip for over a year now, and the quality speaks for itself. Thanks Team</p>",
+            "author": "Chris L.",
+            "author_info": "Warehouse manager",
+            "author_url": "",
+            "image": "shopify://shop_images/on-site-construction-worker.jpg",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "4-stars",
+            "text": "<p>When we needed efficient transport solutions, you guys delivered on all fronts. The ordering process was smooth which we were VERY grateful for. </p>",
+            "author": "Rebecca S.",
+            "author_info": "Operations Director",
+            "author_url": "",
+            "image": "shopify://shop_images/SMILING_TESTIMONIAL.jpg",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "4-stars",
+            "text": "<p>The team at Forward Equip exceeded expectations. The range of heavy-duty shelving have left us feeling confident knowing we’re using products designed to last and keep our team safe.</p>",
+            "author": "Michael T.",
+            "author_info": "Industrial Safety Coordinator",
+            "author_url": "",
+            "image": "shopify://shop_images/portrait-of-a-person-leaning-in-chair.jpg",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial-1",
+        "testimonial-2",
+        "testimonial-3"
+      ],
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/44643.jpg",
+        "image_height": "500px",
+        "content_position": "md:items-start md:justify-center",
+        "image_height_mobile": "500px",
+        "content_position_mobile": "items-center justify-center",
+        "color_text": "#ffffff",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_overlay": "#080715",
+        "overlay_opacity": 82,
+        "padding_top": 20,
+        "padding_bottom": 8,
+        "divider": false,
+        "rounded": true,
+        "enable_parallax": false,
+        "parallax_direction": "zoom"
+      }
+    },
+    "faq_HLBywF": {
+      "type": "faq",
+      "blocks": {
+        "question_MV4x4n": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Can you help me choose the right equipment for my business?</strong>",
+            "text": "<p>Our team has extensive experience with material handling equipment and can help you find the best options for your needs, environment, and budget.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_rUUKEa": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>What delivery options are available?</strong>",
+            "text": "<p>We deliver Australia-wide with various shipping options. Delivery times depend on your location and the product, but we aim to ensure a smooth and timely delivery process and keep you updated along the way.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_dV4iU4": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Do your products come with a warranty?</strong>",
+            "text": "<p>Most products come with a 1 year “back to base” warranty, any issues you may have please give us a call and we can discuss options, e.g spare parts, troubleshooting, returning to warehouse.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "question_MV4x4n",
+        "question_rUUKEa",
+        "question_dV4iU4"
+      ],
+      "custom_css": [
+        "h2 {font-size: 30px;}"
+      ],
+      "settings": {
+        "style": "with-border",
+        "heading": "<strong>FAQs</strong>",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "half_text",
+        "highlighted_scribble": "circle",
+        "color_text": "#efefef",
+        "color_background": "#080715",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "color_overlay": "#ffffff",
+        "overlay_opacity": 0,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "video-with-text-overlay",
+    "1759050429b63b44f9",
+    "multicolumn_with_icons_4GRHX4",
+    "collection-list",
+    "featured-collections",
+    "rich-text-1",
+    "rich_text_wdANXm",
+    "testimonials-banner",
+    "faq_HLBywF"
+  ]
+}

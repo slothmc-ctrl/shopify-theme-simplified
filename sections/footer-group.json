@@ -1,0 +1,274 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:sections.footer-group.name",
+  "sections": {
+    "multicolumn-with-icons": {
+      "type": "multicolumn-with-icons",
+      "blocks": {
+        "column-1": {
+          "type": "column",
+          "settings": {
+            "icon": "trophy",
+            "custom_icon": "",
+            "heading": "100% Australian Owned",
+            "text": "<p>We pride ourselves on supporting local communities and delivering quality you can trust.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column-2": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "custom_icon": "",
+            "heading": "Australian Wide Delivery",
+            "text": "<p>Distribution centres in every state. Melbourne, Sydney, Brisbane, Perth, Adelaide.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column-3": {
+          "type": "column",
+          "settings": {
+            "icon": "award",
+            "custom_icon": "",
+            "heading": "Aus Standards Compliant",
+            "text": "<p>All our products meet Australian Standards, ensuring top-tier quality, safety, and reliability.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column-4": {
+          "type": "column",
+          "settings": {
+            "icon": "shield",
+            "custom_icon": "",
+            "heading": "Secure Payment Processing",
+            "text": "<p>Purchase with confidence using our safe and secure payment options, protecting your transactions every step of the way.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column-1",
+        "column-2",
+        "column-3",
+        "column-4"
+      ],
+      "disabled": true,
+      "settings": {
+        "style": "with-border",
+        "columns": 4,
+        "text_alignment": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "divider": true,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "newsletter_8eENRW": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_GqwAkT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sign up and save",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_RCY9Yd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Be the first to know when we launch.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "form_MRRFHH": {
+          "type": "form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_GqwAkT",
+        "text_RCY9Yd",
+        "form_MRRFHH"
+      ],
+      "disabled": true,
+      "settings": {
+        "content_width": "medium",
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "color_text": "#efefef",
+        "color_background": "#080715",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": true
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand_information_PJkbjf": {
+          "type": "brand_information",
+          "settings": {
+            "heading": "Heading",
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_label_3": "",
+            "button_link_3": "",
+            "button_label_4": "",
+            "button_link_4": "",
+            "container_width": 50,
+            "opened": false
+          }
+        },
+        "logo_social": {
+          "type": "logo_social",
+          "settings": {
+            "logo_height": 50,
+            "show_social": false,
+            "enable_follow_on_shop": false
+          }
+        },
+        "link_list-1": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer",
+            "container_width": 50,
+            "opened": false
+          }
+        },
+        "link_list-2": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Information",
+            "menu": "information-menu",
+            "container_width": 30,
+            "opened": false
+          }
+        },
+        "brand_information": {
+          "type": "brand_information",
+          "settings": {
+            "heading": "",
+            "button_label_1": "0490 898 406",
+            "button_link_1": "tel:0490 898 406",
+            "button_label_2": "sales@forwardequip.com.au",
+            "button_link_2": "mailto:sales@forwardequip.com.au",
+            "button_label_3": "",
+            "button_link_3": "",
+            "button_label_4": "",
+            "button_link_4": "",
+            "container_width": 95,
+            "opened": false
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_PJkbjf",
+        "logo_social",
+        "link_list-1",
+        "link_list-2",
+        "brand_information"
+      ],
+      "settings": {
+        "invert_newsletter_others": false,
+        "enable_newsletter": true,
+        "newsletter_heading": "Sign up for discounts and new product news",
+        "newsletter_heading_size": "md:title-md",
+        "newsletter_text": "",
+        "newsletter_logo": "shopify://shop_images/A1Asset_7.png",
+        "newsletter_logo_height": 46,
+        "show_social": true,
+        "enable_follow_on_shop": false,
+        "color_text": "#ffffff",
+        "color_background": "#080715",
+        "gradient_background": "",
+        "color_button_text": "#080715",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": true,
+        "enable_parallax": false
+      }
+    },
+    "footer-copyright": {
+      "type": "footer-copyright",
+      "settings": {
+        "enable_language_selector": true,
+        "enable_country_selector": true,
+        "show_policy": true,
+        "show_payment_icons": true,
+        "monochrome_payment_icons": false,
+        "show_copyright": true,
+        "copyright_text": ". Built By Apricity Agency",
+        "color_text": "#ffffff",
+        "color_background": "#080715",
+        "gradient_background": "",
+        "divider": false,
+        "full_width": true,
+        "rounded": true,
+        "enable_parallax": false
+      }
+    }
+  },
+  "order": [
+    "multicolumn-with-icons",
+    "newsletter_8eENRW",
+    "footer",
+    "footer-copyright"
+  ]
+}

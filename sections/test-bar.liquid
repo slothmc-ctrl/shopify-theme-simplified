@@ -1,0 +1,5 @@
+{%- if settings.enable_test_bar -%}
+<div class="test-bar" style="background-color: {{ settings.test_bar_background }}; color: {{ settings.test_bar_text_color }}; padding: 10px; text-align: center; position: fixed; top: 0; left: 0; right: 0; z-index: 9999; font-weight: bold;">
+  {{ settings.test_bar_text }}
+</div>
+{%- endif -%}

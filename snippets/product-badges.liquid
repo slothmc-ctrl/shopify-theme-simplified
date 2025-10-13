@@ -1,0 +1,45 @@
+{%- liquid
+  if product.compare_at_price > product.price and show_save_amount
+    if save_type == 'label'
+      assign saved_amount = save_type
+    elsif save_type == 'dollar'
+      assign saved_amount = product.compare_at_price | minus: product.price | money
+    else
+      assign saved_amount = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round
+      assign saved_amount = saved_amount | append: '%'
+    endif
+  endif
+-%}
+<div class="badges{% if class != blank %} {{ class }}{% endif %} pointer-events-none" {% if animate %}data-badge-animate{% endif %}>
+  {%- if product.metafields.theme.label.value != blank -%}
+    {%- capture styles -%}
+      {%- if product.metafields.theme.label_color.value != blank -%}
+        --badge-background: {{ product.metafields.theme.label_color.value }}; --badge-foreground: #ffffff;
+      {%- endif -%}
+    {%- endcapture -%}
+    {%- for label in product.metafields.theme.label.value -%}
+      <span class="badge badge--priority-low flex items-center gap-1d5 font-medium leading-none rounded-full" 
+            {% if animate %}data-badge-animate{% endif %}
+            {% if styles != blank %} style="{{ styles }}"{% endif %}
+            role="img" 
+            aria-label="{{ label | escape }}">
+        {{- label | escape -}}
+      </span>
+    {%- endfor -%}
+  {%- endif -%}
+
+  {%- if saved_amount != blank -%}
+    <span class="badge badge--onsale badge--priority-high flex items-center gap-1d5 font-medium leading-none rounded-full" 
+          {% if animate %}data-badge-animate{% endif %}
+          role="img" 
+          aria-label="{% if save_type == 'label %}{{ 'products.general.sale' | t }}{% else %}{{ 'products.general.save_html' | t: saved_amount: saved_amount | strip_html }}{% endif %}">
+      {%- liquid
+        if save_type == 'label'
+          echo 'products.general.sale' | t
+        else
+          echo 'products.general.save_html' | t: saved_amount: saved_amount
+        endif
+      -%}
+    </span>
+  {%- endif -%}
+</div>
