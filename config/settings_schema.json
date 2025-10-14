@@ -712,9 +712,9 @@
             "label": "Modern variants"
           }
         ],
-        "default": "classic",
+        "default": "modern",
         "label": "Button variant style",
-        "info": "Classic mode uses existing button colors, while Modern variants enables individual variant customization."
+        "info": "Modern variants (recommended) provides 8 customizable button styles with Shopify.com marketing design. Includes primary, secondary, success, danger, ghost, outline, text-link, and icon variants. Classic mode maintains legacy button compatibility."
       },
       {
         "type": "header",

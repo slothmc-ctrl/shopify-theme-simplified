@@ -90,6 +90,18 @@
           },
           "label": "Button style"
         },
+        "button_variant": {
+          "options__1": { "label": "Primary" },
+          "options__2": { "label": "Secondary" },
+          "options__3": { "label": "Success" },
+          "options__4": { "label": "Danger" },
+          "options__5": { "label": "Ghost" },
+          "options__6": { "label": "Outline" },
+          "options__7": { "label": "Text link" },
+          "options__8": { "label": "Icon only" },
+          "label": "Button variant",
+          "info": "Choose a style. Primary and Secondary map to your theme’s main button colors; others use semantic or outline/ghost treatments."
+        },
         "button_size": {
           "options__1": {
             "label": "Small"
@@ -107,6 +119,24 @@
         },
         "button_icon": {
           "label": "Show button icon"
+        },
+        "button_custom_classes": {
+          "label": "Custom CSS classes"
+        },
+        "button_radius_override": {
+          "label": "Button radius override"
+        },
+        "button_bg_color": {
+          "label": "Button background override"
+        },
+        "button_text_color": {
+          "label": "Button text override"
+        },
+        "button_hover_color": {
+          "label": "Button hover background override"
+        },
+        "button_hover_darkness": {
+          "label": "Hover darken (%)"
         },
         "color_accent": {
           "label": "Accent"

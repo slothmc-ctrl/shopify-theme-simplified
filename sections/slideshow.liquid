@@ -142,13 +142,27 @@
               {%- endif -%}
 
               {%- if block.settings.button_label != blank -%}
+                {%- liquid
+                  assign classes_str = 'button--blur button--fixed pointer-events-auto'
+                  if block.settings.button_radius_override > 0
+                    assign classes_str = classes_str | append: ' has-radius-override'
+                  endif
+                  if block.settings.button_custom_classes != blank
+                    assign classes_str = classes_str | append: ' ' | append: block.settings.button_custom_classes
+                  endif
+                  assign inline_style_str = ''
+                  if block.settings.button_radius_override > 0
+                    assign inline_style_str = '--buttons-radius: ' | append: block.settings.button_radius_override | append: 'px;'
+                  endif
+                -%}
                 {%- render 'button',
                   label: block.settings.button_label,
                   link: block.settings.button_link,
-                  style: block.settings.button_style,
+                  variant: block.settings.button_variant | default: block.settings.button_style,
                   external: block.settings.button_external,
                   show_icon: block.settings.button_icon,
-                  classes: 'button--blur button--fixed pointer-events-auto',
+                  classes: classes_str,
+                  inline_style: inline_style_str,
                   shopify_attributes: block.shopify_attributes
                 -%}
               {%- endif -%}
@@ -563,23 +577,20 @@
         {
           "visible_if": "{{ block.settings.button_label != blank }}",
           "type": "select",
-          "id": "button_style",
+          "id": "button_variant",
           "options": [
-            {
-              "value": "primary",
-              "label": "t:sections.global.settings.button_style.options__1.label"
-            },
-            {
-              "value": "secondary",
-              "label": "t:sections.global.settings.button_style.options__2.label"
-            },
-            {
-              "value": "link",
-              "label": "t:sections.global.settings.button_style.options__3.label"
-            }
+            { "value": "primary", "label": "t:sections.global.settings.button_variant.options__1.label" },
+            { "value": "secondary", "label": "t:sections.global.settings.button_variant.options__2.label" },
+            { "value": "success", "label": "t:sections.global.settings.button_variant.options__3.label" },
+            { "value": "danger", "label": "t:sections.global.settings.button_variant.options__4.label" },
+            { "value": "ghost", "label": "t:sections.global.settings.button_variant.options__5.label" },
+            { "value": "outline", "label": "t:sections.global.settings.button_variant.options__6.label" },
+            { "value": "text-link", "label": "t:sections.global.settings.button_variant.options__7.label" },
+            { "value": "icon", "label": "t:sections.global.settings.button_variant.options__8.label" }
           ],
           "default": "primary",
-          "label": "t:sections.global.settings.button_style.label"
+          "label": "t:sections.global.settings.button_variant.label",
+          "info": "t:sections.global.settings.button_variant.info"
         },
         {
           "visible_if": "{{ block.settings.button_label != blank }}",
@@ -594,6 +605,23 @@
           "id": "button_icon",
           "label": "t:sections.global.settings.button_icon.label",
           "default": false
+        },
+        {
+          "visible_if": "{{ block.settings.button_label != blank }}",
+          "type": "text",
+          "id": "button_custom_classes",
+          "label": "Custom classes"
+        },
+        {
+          "visible_if": "{{ block.settings.button_label != blank }}",
+          "type": "range",
+          "id": "button_radius_override",
+          "label": "Button radius override",
+          "min": 0,
+          "max": 32,
+          "step": 1,
+          "unit": "px",
+          "default": 0
         }
       ]
     },
@@ -748,23 +776,20 @@
         {
           "visible_if": "{{ block.settings.button_label != blank }}",
           "type": "select",
-          "id": "button_style",
+          "id": "button_variant",
           "options": [
-            {
-              "value": "primary",
-              "label": "t:sections.global.settings.button_style.options__1.label"
-            },
-            {
-              "value": "secondary",
-              "label": "t:sections.global.settings.button_style.options__2.label"
-            },
-            {
-              "value": "link",
-              "label": "t:sections.global.settings.button_style.options__3.label"
-            }
+            { "value": "primary", "label": "t:sections.global.settings.button_variant.options__1.label" },
+            { "value": "secondary", "label": "t:sections.global.settings.button_variant.options__2.label" },
+            { "value": "success", "label": "t:sections.global.settings.button_variant.options__3.label" },
+            { "value": "danger", "label": "t:sections.global.settings.button_variant.options__4.label" },
+            { "value": "ghost", "label": "t:sections.global.settings.button_variant.options__5.label" },
+            { "value": "outline", "label": "t:sections.global.settings.button_variant.options__6.label" },
+            { "value": "text-link", "label": "t:sections.global.settings.button_variant.options__7.label" },
+            { "value": "icon", "label": "t:sections.global.settings.button_variant.options__8.label" }
           ],
           "default": "primary",
-          "label": "t:sections.global.settings.button_style.label"
+          "label": "t:sections.global.settings.button_variant.label",
+          "info": "t:sections.global.settings.button_variant.info"
         },
         {
           "visible_if": "{{ block.settings.button_label != blank }}",
@@ -779,6 +804,23 @@
           "id": "button_icon",
           "label": "t:sections.global.settings.button_icon.label",
           "default": false
+        },
+        {
+          "visible_if": "{{ block.settings.button_label != blank }}",
+          "type": "text",
+          "id": "button_custom_classes",
+          "label": "Custom classes"
+        },
+        {
+          "visible_if": "{{ block.settings.button_label != blank }}",
+          "type": "range",
+          "id": "button_radius_override",
+          "label": "Button radius override",
+          "min": 0,
+          "max": 32,
+          "step": 1,
+          "unit": "px",
+          "default": 0
         }
       ]
     }

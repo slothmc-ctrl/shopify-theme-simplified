@@ -6,57 +6,13 @@
   --color-border-dark: var(--color-foreground)/ 0.4;
   --color-border-light: var(--color-foreground)/ 0.06;
   --color-highlight: var(--color-base-highlight);
-  --color-button-background: var(--color-base-button);
-  --color-button-gradient: var(--color-base-button-gradient);
-  --color-button-border: var(--color-base-button);
-  --color-button-text: var(--color-base-button-text);
 
   /* Button variant token defaults - only defaults defined here, tokens come from css-variables.liquid */
   /* These provide fallback values when modern variants are not enabled */
   
   /* Primary button defaults */
-  --color-button-primary-bg-default: var(--color-button-background);
-  --color-button-primary-text-default: var(--color-button-text);
-  --color-button-primary-hover-default: var(--color-button-background);
 
-  /* Secondary button defaults */
-  --color-button-secondary-bg-default: var(--color-button-background);
-  --color-button-secondary-text-default: var(--color-button-text);
-  --color-button-secondary-hover-default: var(--color-button-background);
 
-  /* Success button defaults */
-  --color-button-success-bg-default: var(--color-button-background);
-  --color-button-success-text-default: var(--color-button-text);
-  --color-button-success-hover-default: var(--color-button-background);
-
-  /* Danger button defaults */
-  --color-button-danger-bg-default: var(--color-button-background);
-  --color-button-danger-text-default: var(--color-button-text);
-  --color-button-danger-hover-default: var(--color-button-background);
-
-  /* Ghost button defaults */
-  --color-button-ghost-text-default: var(--color-button-background);
-  --color-button-ghost-hover-bg-default: var(--color-button-background);
-
-  /* Outline button defaults */
-  --color-button-outline-text-default: var(--color-button-background);
-  --color-button-outline-border-default: var(--color-button-background);
-  --color-button-outline-hover-bg-default: var(--color-button-background);
-
-  /* Text Link button defaults */
-  --color-button-text-link-text-default: var(--color-button-background);
-  --color-button-text-link-hover-default: var(--color-button-background);
-  --color-button-text-link-underline-default: var(--color-button-background);
-
-  /* Icon button defaults */
-  --color-button-icon-bg-default: var(--color-button-background);
-  --color-button-icon-text-default: var(--color-button-text);
-  --color-button-icon-hover-default: var(--color-button-background);
-  --color-button-icon-fill-default: var(--color-button-text);
-
-  /* Disabled button defaults */
-  --color-button-disabled-bg-default: #d1d5db;
-  --color-button-disabled-text-default: #9ca3af;
   --font-normal: 400;
   --font-medium: 500;
   --font-bold: 700;
@@ -3169,6 +3125,39 @@ button.shopify-payment-button__button--unbranded::after {
   border: var(--buttons-border-width) solid rgb(var(--color-button-border)/ var(--border-opacity));
 }
 
+  /* Modern variant pill override
+     Shopify.com marketing reference uses pill-shaped buttons for solid modern variants.
+     Override the theme variable for modern variant classes while explicitly
+     excluding text-link and icon variants which have specific shapes. */
+  .button--variant-primary,
+  .button--variant-secondary,
+  .button--variant-success,
+  .button--variant-danger,
+  .button--variant-ghost,
+  .button--variant-outline {
+    border-radius: 9999px;
+  }
+
+  /* Ensure pseudo-element matches pill radius on modern variants */
+  .button--variant-primary::after,
+  .button--variant-secondary::after,
+  .button--variant-success::after,
+  .button--variant-danger::after,
+  .button--variant-ghost::after,
+  .button--variant-outline::after {
+    border-radius: 9999px;
+  }
+
+  /* Remove outline border on solid modern variants to match reference */
+  .button--variant-primary::after,
+  .button--variant-secondary::after,
+  .button--variant-success::after,
+  .button--variant-danger::after {
+    border-width: 0;
+    border-color: transparent;
+  }
+
+
 .button.icon-with-text .btn-text {
   align-items: center;
   display: flex;
@@ -3291,7 +3280,7 @@ button.shopify-payment-button__button--unbranded {
   .button,
   .shopify-challenge__button,
   button.shopify-payment-button__button--unbranded {
-    --button-transition: box-shadow var(--animation-primary), opacity var(--animation-fast);
+    --button-transition: box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     transition: var(--button-transition);
   }
 
@@ -3307,7 +3296,7 @@ button.shopify-payment-button__button--unbranded {
   }
 
   .button .btn-fill {
-    transition: background-color var(--animation-primary);
+    transition: background-color var(--animation-primary), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .button--close .icon:first-child {
@@ -3318,7 +3307,9 @@ button.shopify-payment-button__button--unbranded {
     --tw-rotate: 90deg;
   }
 
-  [data-button-hover=standard] .button:not([disabled]) .btn-fill {
+  /* Limit legacy JS-driven hover fill to legacy buttons only */
+  [data-button-hover=standard] .button.button--primary:not([disabled]) .btn-fill,
+  [data-button-hover=standard] .button.button--secondary:not([disabled]) .btn-fill {
     display: block;
   }
 
@@ -3329,25 +3320,18 @@ button.shopify-payment-button__button--unbranded {
     --shadow-vertical-offset: 0;
   }
 
-  .js [data-button-hover=standard] .button--primary:hover:not([disabled], .self-button) {
-    color: rgb(var(--color-button-background));
+
   }
 
-  .js [data-button-hover=standard] .button--secondary:hover:not([disabled], .self-button),
-  .js [data-button-hover=standard] .shopify-payment-button__button--unbranded:hover:not([disabled]) {
-    color: rgb(var(--color-button-text));
+  /* Legacy active states for tactile feedback on legacy classes
+     Match modern variant active behavior to provide consistent press feedback */
+  .button--primary:not([disabled]):not([aria-disabled="true"]):active,
+  .button--secondary:not([disabled]):not([aria-disabled="true"]):active {
+    filter: brightness(85%);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
   }
 
-  .js [data-button-hover=standard] .shopify-payment-button__button--unbranded:hover:not([disabled]) {
-    background-color: rgb(var(--color-button-background));
-  }
-}
 
-@media screen and (hover: none) {
-  .js .shopify-payment-button__button--unbranded:hover:not([disabled]) {
-    background: none;
-  }
-}
 
 /*! Button Variants - Modern variant classes using new token system */
 
@@ -3355,9 +3339,10 @@ button.shopify-payment-button__button--unbranded {
 .button--variant-primary {
   background-color: rgb(var(--color-button-primary-bg, var(--color-button-primary-bg-default)));
   color: rgb(var(--color-button-primary-text, var(--color-button-primary-text-default)));
+  transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button--variant-primary:hover:not([disabled]) {
+.button--variant-primary:hover:not([disabled]):not([aria-disabled="true"]) {
   background-color: rgb(var(--color-button-primary-hover, var(--color-button-primary-hover-default)));
 }
 
@@ -3365,9 +3350,10 @@ button.shopify-payment-button__button--unbranded {
 .button--variant-secondary {
   background-color: rgb(var(--color-button-secondary-bg, var(--color-button-secondary-bg-default)));
   color: rgb(var(--color-button-secondary-text, var(--color-button-secondary-text-default)));
+  transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button--variant-secondary:hover:not([disabled]) {
+.button--variant-secondary:hover:not([disabled]):not([aria-disabled="true"]) {
   background-color: rgb(var(--color-button-secondary-hover, var(--color-button-secondary-hover-default)));
 }
 
@@ -3375,9 +3361,10 @@ button.shopify-payment-button__button--unbranded {
 .button--variant-success {
   background-color: rgb(var(--color-button-success-bg, var(--color-button-success-bg-default)));
   color: rgb(var(--color-button-success-text, var(--color-button-success-text-default)));
+  transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button--variant-success:hover:not([disabled]) {
+.button--variant-success:hover:not([disabled]):not([aria-disabled="true"]) {
   background-color: rgb(var(--color-button-success-hover, var(--color-button-success-hover-default)));
 }
 
@@ -3385,9 +3372,10 @@ button.shopify-payment-button__button--unbranded {
 .button--variant-danger {
   background-color: rgb(var(--color-button-danger-bg, var(--color-button-danger-bg-default)));
   color: rgb(var(--color-button-danger-text, var(--color-button-danger-text-default)));
+  transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button--variant-danger:hover:not([disabled]) {
+.button--variant-danger:hover:not([disabled]):not([aria-disabled="true"]) {
   background-color: rgb(var(--color-button-danger-hover, var(--color-button-danger-hover-default)));
 }
 
@@ -3395,10 +3383,11 @@ button.shopify-payment-button__button--unbranded {
 .button--variant-ghost {
   background-color: transparent;
   color: rgb(var(--color-button-ghost-text, var(--color-button-ghost-text-default)));
+  transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button--variant-ghost:hover:not([disabled]) {
-  background-color: rgba(var(--color-button-ghost-text, var(--color-button-ghost-text-default)), 0.1);
+.button--variant-ghost:hover:not([disabled]):not([aria-disabled="true"]) {
+  background-color: rgb(var(--color-button-ghost-hover-bg, var(--color-button-ghost-hover-bg-default)) / 0.1);
 }
 
 /* Outline variant */
@@ -3406,10 +3395,11 @@ button.shopify-payment-button__button--unbranded {
   background-color: transparent;
   color: rgb(var(--color-button-outline-text, var(--color-button-outline-text-default)));
   border: 1px solid rgb(var(--color-button-outline-border, var(--color-button-outline-border-default)));
+  transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button--variant-outline:hover:not([disabled]) {
-  background-color: rgba(var(--color-button-outline-text, var(--color-button-outline-text-default)), 0.1);
+.button--variant-outline:hover:not([disabled]):not([aria-disabled="true"]) {
+  background-color: rgb(var(--color-button-outline-hover-bg, var(--color-button-outline-hover-bg-default)) / 0.1);
 }
 
 /* Text Link variant */
@@ -3432,11 +3422,11 @@ button.shopify-payment-button__button--unbranded {
   transition: width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button--variant-text-link:hover:not([disabled]) {
+.button--variant-text-link:hover:not([disabled]):not([aria-disabled="true"]) {
   color: rgb(var(--color-button-text-link-hover, var(--color-button-text-link-hover-default)));
 }
 
-.button--variant-text-link:hover:not([disabled])::after {
+.button--variant-text-link:hover:not([disabled]):not([aria-disabled="true"])::after {
   width: 100%;
 }
 
@@ -3448,9 +3438,10 @@ button.shopify-payment-button__button--unbranded {
   border-radius: 50%;
   width: 40px;
   height: 40px;
+  transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button--variant-icon:hover:not([disabled]) {
+.button--variant-icon:hover:not([disabled]):not([aria-disabled="true"]) {
   background-color: rgb(var(--color-button-icon-hover, var(--color-button-icon-hover-default)));
 }
 
@@ -3484,55 +3475,7 @@ button.shopify-payment-button__button--unbranded {
   display: none;
 }
 
-/*! Button Accessibility & Interaction Improvements */
 
-/* Focus-visible styles for keyboard navigation */
-.button--variant-primary:focus-visible,
-.button--variant-secondary:focus-visible,
-.button--variant-success:focus-visible,
-.button--variant-danger:focus-visible {
-  outline: 2px solid rgb(var(--color-keyboard-focus));
-  outline-offset: 3px;
-}
-
-.button--variant-ghost:focus-visible,
-.button--variant-outline:focus-visible,
-.button--variant-text-link:focus-visible {
-  outline: 2px solid rgb(var(--color-keyboard-focus));
-  outline-offset: 3px;
-}
-
-.button--variant-icon:focus-visible {
-  outline: 2px solid rgb(var(--color-keyboard-focus));
-  outline-offset: 3px;
-  border-radius: 50%;
-}
-
-/* Active states for tactile feedback */
-.button--variant-primary:not([disabled]):not([aria-disabled="true"]):active,
-.button--variant-secondary:not([disabled]):not([aria-disabled="true"]):active,
-.button--variant-success:not([disabled]):not([aria-disabled="true"]):active,
-.button--variant-danger:not([disabled]):not([aria-disabled="true"]):active,
-.button--variant-icon:not([disabled]):not([aria-disabled="true"]):active {
-  filter: brightness(85%);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.button--variant-ghost:not([disabled]):not([aria-disabled="true"]):active {
-  background-color: rgba(var(--color-button-ghost-text, var(--color-button-ghost-text-default)), 0.2);
-}
-
-.button--variant-outline:not([disabled]):not([aria-disabled="true"]):active {
-  background-color: rgba(var(--color-button-outline-text, var(--color-button-outline-text-default)), 0.2);
-}
-
-.button--variant-text-link:not([disabled]):not([aria-disabled="true"]):active {
-  color: rgb(var(--color-button-text-link-hover, var(--color-button-text-link-hover-default)));
-}
-
-.button--variant-text-link:not([disabled]):not([aria-disabled="true"]):active::after {
-  width: 100%;
-}
 
 /* Icon spacing and sizing improvements */
 .button.icon-with-text .btn-text {
@@ -3577,6 +3520,8 @@ button.shopify-payment-button__button--unbranded {
     transition: none !important;
     animation: none !important;
   }
+
+  /* Keep filter-based active feedback; transitions are already disabled above */
 }
 
 /* Enhanced text-link underline animation performance */

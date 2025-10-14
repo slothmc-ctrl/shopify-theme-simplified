@@ -167,7 +167,7 @@
                   {%- render 'button',
                     label: block.settings.button_label,
                     link: block.settings.button_link,
-                    style: block.settings.button_style,
+                    variant: block.settings.button_variant | default: block.settings.button_style,
                     external: block.settings.button_external,
                     show_icon: block.settings.button_icon,
                     classes: 'button--blur button--fixed pointer-events-auto',
@@ -578,23 +578,20 @@
         {
           "visible_if": "{{ block.settings.button_label != blank }}",
           "type": "select",
-          "id": "button_style",
+          "id": "button_variant",
           "options": [
-            {
-              "value": "primary",
-              "label": "t:sections.global.settings.button_style.options__1.label"
-            },
-            {
-              "value": "secondary",
-              "label": "t:sections.global.settings.button_style.options__2.label"
-            },
-            {
-              "value": "link",
-              "label": "t:sections.global.settings.button_style.options__3.label"
-            }
+            { "value": "primary", "label": "t:sections.global.settings.button_variant.options__1.label" },
+            { "value": "secondary", "label": "t:sections.global.settings.button_variant.options__2.label" },
+            { "value": "success", "label": "t:sections.global.settings.button_variant.options__3.label" },
+            { "value": "danger", "label": "t:sections.global.settings.button_variant.options__4.label" },
+            { "value": "ghost", "label": "t:sections.global.settings.button_variant.options__5.label" },
+            { "value": "outline", "label": "t:sections.global.settings.button_variant.options__6.label" },
+            { "value": "text-link", "label": "t:sections.global.settings.button_variant.options__7.label" },
+            { "value": "icon", "label": "t:sections.global.settings.button_variant.options__8.label" }
           ],
           "default": "primary",
-          "label": "t:sections.global.settings.button_style.label"
+          "label": "t:sections.global.settings.button_variant.label",
+          "info": "t:sections.global.settings.button_variant.info"
         },
         {
           "visible_if": "{{ block.settings.button_label != blank }}",
@@ -763,23 +760,20 @@
         {
           "visible_if": "{{ block.settings.button_label != blank }}",
           "type": "select",
-          "id": "button_style",
+          "id": "button_variant",
           "options": [
-            {
-              "value": "primary",
-              "label": "t:sections.global.settings.button_style.options__1.label"
-            },
-            {
-              "value": "secondary",
-              "label": "t:sections.global.settings.button_style.options__2.label"
-            },
-            {
-              "value": "link",
-              "label": "t:sections.global.settings.button_style.options__3.label"
-            }
+            { "value": "primary", "label": "t:sections.global.settings.button_variant.options__1.label" },
+            { "value": "secondary", "label": "t:sections.global.settings.button_variant.options__2.label" },
+            { "value": "success", "label": "t:sections.global.settings.button_variant.options__3.label" },
+            { "value": "danger", "label": "t:sections.global.settings.button_variant.options__4.label" },
+            { "value": "ghost", "label": "t:sections.global.settings.button_variant.options__5.label" },
+            { "value": "outline", "label": "t:sections.global.settings.button_variant.options__6.label" },
+            { "value": "text-link", "label": "t:sections.global.settings.button_variant.options__7.label" },
+            { "value": "icon", "label": "t:sections.global.settings.button_variant.options__8.label" }
           ],
           "default": "primary",
-          "label": "t:sections.global.settings.button_style.label"
+          "label": "t:sections.global.settings.button_variant.label",
+          "info": "t:sections.global.settings.button_variant.info"
         },
         {
           "visible_if": "{{ block.settings.button_label != blank }}",

@@ -1,132 +1,209 @@
-{%- comment -%}
-  Renders a button (or link styled as a button) with modern variant support
-
-  For complete documentation, see /docs/BUTTON_COMPONENT_SYSTEM.md
-  For technical architecture, see /docs/BUTTON_ARCHITECTURE.md
-
-  This component supports both legacy and modern variant systems for backward compatibility.
-  Legacy variants use 'style' parameter and require JavaScript hover animations.
-  Modern variants use 'variant' parameter and are pure CSS.
-
-  Accepts:
-  - label: {String} the label of the button.
-  - link: {String} an optional link to set.
-  - size: {String} can be "small", "large", "fixed". If none is set, the default size is used.
-  - style: {String} "primary", "secondary" or "link". If none is set "primary" is assumed. (LEGACY - use variant instead)
-  - variant: {String} Modern variant type: "primary", "secondary", "success", "danger", "ghost", "outline", "text-link", "icon". Takes precedence over style.
-  - element_type: {String} "link" or "button" - determines HTML element type (defaults to "link").
-  - button_type: {String} "button", "submit", "reset" - sets the type attribute for button elements.
-  - form_id: {String} - sets the form attribute for button elements.
-  - disabled: {Boolean} - adds disabled attribute.
-  - icon_only: {Boolean} if set to true, renders an icon-only button (overrides variant to "icon").
-  - icon_name: {String} specifies which icon to render (defaults to "arrow-right").
-  - icon_position: {String} "left" or "right" for text+icon buttons (defaults to "right").
-  - external: {String} if set to true and that a href is passed, it opens into a new window.
-  - show_icon: {Boolean} if set to true, render an icon along the button. (LEGACY - use icon_name instead)
-  - classes: {String} the extra classes.
-  - shopify_attributes: {String} the shopify attributes.
-
-  Usage:
-  {% render 'button', label: 'Add to Cart', variant: 'success', icon_name: 'cart' %}
-  {% render 'button', element_type: 'button', button_type: 'submit', variant: 'primary', label: 'Submit' %}
-  {% render 'button', icon_only: true, icon_name: 'search', link: '/search' %}
+{%- comment -%} 
+    Renders a button (or link styled as a button) with modern variant support
+   
+    For complete documentation, see /docs/BUTTON_COMPONENT_SYSTEM.md
+    For technical architecture, see /docs/BUTTON_ARCHITECTURE.md
+   
+    This component supports both legacy and modern variant systems for backward compatibility.
+    Legacy variants use the 'style' parameter and require JavaScript hover animations.
+    Modern variants use the 'variant' parameter and are pure CSS.
+   
+    Accepts: 
+    - label: {String} the label of the button. 
+    - link: {String} an optional link to set. 
+    - size: {String} can be "small", "large", "fixed". If none is set, the default size is used. 
+    - style: {String} LEGACY - 'primary' or 'secondary'. Use 'variant' parameter instead for modern styling. Also supports 'link' for a simple text link style. 
+    - variant: {String} MODERN (recommended) - 'primary', 'secondary', 'success', 'danger', 'ghost', 'outline', 'text-link', 'icon'. Takes precedence over style parameter and uses pure CSS styling. 
+    - element_type: {String} "link" or "button" - determines HTML element type (defaults to "link"). 
+    - button_type: {String} "button", "submit", "reset" - sets the type attribute for button elements. 
+    - form_id: {String} - sets the form attribute for button elements. 
+    - disabled: {Boolean} - adds disabled attribute. 
+    - icon_only: {Boolean} if set to true, renders an icon-only button (overrides variant to "icon"). Since 'icon' is a modern variant, this always uses modern styling. 
+    - icon_name: {String} specifies which icon to render (defaults to "arrow-right"). 
+    - icon_position: {String} "left" or "right" for text+icon buttons (defaults to "right"). 
+    - external: {String} if set to true and that a href is passed, it opens into a new window. 
+    - show_icon: {Boolean} if set to true, render an icon along the button. (LEGACY - use icon_name instead) 
+  - classes: {String} the extra classes. 
+  - inline_style: {String} optional inline CSS (e.g., "--buttons-radius: 12px;") applied to the root element. 
+    - shopify_attributes: {String} the shopify attributes.
+   
+    Usage:
+    {% render 'button', label: 'Add to Cart', variant: 'success', icon_name: 'cart' %}
+    {% render 'button', element_type: 'button', button_type: 'submit', variant: 'primary', label: 'Submit' %}
+    {% render 'button', icon_only: true, icon_name: 'search', link: '/search' %}
+    {# Legacy: {% render 'button', label: 'Click', style: 'primary' %} #}
+    {# Modern: {% render 'button', label: 'Click', variant: 'primary' %} #}
+   
+    Notes: 
+    - Legacy variants use JavaScript hover animations; modern variants use pure CSS. 
+    - The 'variant' parameter takes precedence over 'style' when both are provided. 
 {%- endcomment -%}
 
 {%- liquid
+  # Testing considerations:
+  # - When `variant` is provided: uses modern.button--variant-* classes, no btn-fill, pure CSS hover
+  # - When only `style` is provided: uses legacy.button--* classes, includes btn-fill, JavaScript hover
+  # - When `icon_only: true`: always uses modern.button--variant-icon
+  # - All 8 modern variants supported: primary, secondary, success, danger, ghost, outline, text-link, icon
+  # - Backward compatibility: existing sections using `style` continue to work
+
   # Determine the final variant to use
   # Priority order: icon_only → variant → style → default
   # This ensures backward compatibility while allowing modern variants to take precedence
   assign final_variant = variant | default: style | default: 'primary'
-  
+
   # Handle icon_only override - forces icon variant for accessibility
   if icon_only
     assign final_variant = 'icon'
   endif
-  
+
+  # Track whether modern variant system should be used
+  # Modern if explicit `variant` is provided or icon_only forces 'icon'
+  assign is_modern_variant = false
+  if variant != blank
+    assign is_modern_variant = true
+  endif
+  if icon_only
+    assign is_modern_variant = true
+  endif
+
+  # Normalize modern 'link' to 'text-link' to avoid legacy link rendering when variant is provided
+  if is_modern_variant and final_variant == 'link'
+    assign final_variant = 'text-link'
+  endif
+
+  # Guard modern variants to the supported set to avoid non-existent CSS classes
+  assign supported_variants = 'primary,secondary,success,danger,ghost,outline,text-link,icon'
+  assign variant_list = supported_variants | split: ','
+  assign is_supported_variant = false
+  for v in variant_list
+    if v == final_variant
+      assign is_supported_variant = true
+    endif
+  endfor
+  if is_modern_variant and is_supported_variant == false
+    assign final_variant = 'primary'
+  endif
+
   # Handle legacy 'link' style
   assign is_link_style = false
-  if final_variant == 'link' or style == 'link'
+  if final_variant == 'link'
+    assign is_link_style = true
+  elsif variant == blank and style == 'link'
     assign is_link_style = true
   endif
-  
+
   # Determine element type
   assign el_type = element_type | default: 'link'
   assign is_button_element = false
   if el_type == 'button'
     assign is_button_element = true
   endif
-  
+
   # Determine icon settings
   assign has_icon = false
   assign final_icon_name = icon_name | default: 'arrow-right'
   if show_icon or icon_name != blank or icon_only
     assign has_icon = true
   endif
-  
+
   assign icon_pos = icon_position | default: 'right'
-  
+
   # Build button classes
   assign button_classes = 'button'
-  
+
   # Add variant class
-  # Legacy variants (.button--primary) use btn-fill element and require JavaScript hover animations
-  # Modern variants (.button--variant-primary) are pure CSS and don't need JavaScript
-  case final_variant
-    when 'primary', 'secondary'
-      # Legacy variants - maintain backward compatibility with btn-fill
-      assign button_classes = button_classes | append: ' button--' | append: final_variant
-    when 'success', 'danger', 'ghost', 'outline', 'text-link', 'icon'
-      # Modern variants
-      assign button_classes = button_classes | append: ' button--variant-' | append: final_variant
-    else
-      # Fallback to primary for unknown variants
-      assign button_classes = button_classes | append: ' button--primary'
-  endcase
-  
+  # If modern variant explicitly requested, always use.button--variant-* (including primary/secondary)
+  # Otherwise, legacy mode supports.button--primary and.button--secondary; unknowns fallback to primary
+  if is_modern_variant
+    assign button_classes = button_classes | append: ' button--variant-' | append: final_variant
+  else
+    case final_variant
+      when 'primary', 'secondary'
+        assign button_classes = button_classes | append: ' button--' | append: final_variant
+      else
+        assign button_classes = button_classes | append: ' button--primary'
+    endcase
+  endif
+
   # Add size class
   assign button_size = size | default: 'md'
   if button_size != 'md'
     assign button_classes = button_classes | append: ' button--' | append: button_size
   endif
-  
+
   # Add icon classes
   if has_icon and final_variant != 'icon'
     assign button_classes = button_classes | append: ' icon-with-text'
   endif
-  
+
   # Add custom classes
   if classes != blank
     assign button_classes = button_classes | append: ' ' | append: classes
   endif
-  
+
   # Determine if this is a legacy variant that needs btn-fill
   # btn-fill is a span element used by JavaScript hover animations (theme.HoverButton class)
   # Only legacy primary/secondary variants need this element; modern variants use pure CSS
   assign needs_btn_fill = false
-  if final_variant == 'primary' or final_variant == 'secondary'
-    assign needs_btn_fill = true
+  if is_modern_variant == false
+    if final_variant == 'primary' or final_variant == 'secondary'
+      assign needs_btn_fill = true
+    endif
   endif
 -%}
 
 {%- if is_link_style -%}
   {%- comment -%} Link-style buttons: simple anchor tags without button styling {%- endcomment -%}
-  <a class="link inline-block{% if classes != blank %} {{ classes }}{% endif %}{% if has_icon %} icon-with-text{% endif %}"{% if link != blank %} href="{{ link }}"{% if external %} target="_blank" rel="noopener"{% endif %}{% else %} aria-disabled="true" tabindex="-1"{% endif %} {{ shopify_attributes }}>
+  <a
+    class="link inline-block{% if classes != blank %} {{ classes }}{% endif %}{% if has_icon %} icon-with-text{% endif %}"
+    {% if inline_style != blank %}style="{{ inline_style }}"{% endif %}
+    {% if link != blank %}
+    href="{{ link }}"
+    {% if external %}
+    target="_blank"
+    rel="noopener"
+    {% endif %}
+    {% else %}
+    aria-disabled="true"
+    tabindex="-1"
+    {% endif %}
+    {{ shopify_attributes }}>
     <span class="link-text">{{ label | escape }}</span>
     {%- if has_icon -%}
-      {%- render 'icon', icon: final_icon_name, size: 'sm', class: 'transform' -%}
+      {%- render 'icon'
+        , icon: final_icon_name
+        , size: 'sm'
+        , class: 'transform' -%}
     {%- endif -%}
   </a>
 {%- elsif is_button_element -%}
   {%- comment -%} Button elements: native <button> elements for forms {%- endcomment -%}
-  <button class="{{ button_classes }}"{% if button_type != blank %} type="{{ button_type }}"{% else %} type="button"{% endif %}{% if form_id != blank %} form="{{ form_id }}"{% endif %}{% if disabled %} disabled{% endif %} {{ shopify_attributes }}>
+  <button
+    class="{{ button_classes }}"
+    {% if inline_style != blank %}style="{{ inline_style }}"{% endif %}
+    {% if button_type != blank %}
+    type="{{ button_type }}"
+    {% else %}
+    type="button"
+    {% endif %}
+    {% if form_id != blank %}
+    form="{{ form_id }}"
+    {% endif %}
+    {% if disabled %}
+    disabled{% endif %}
+    {{ shopify_attributes }}>
     {%- if needs_btn_fill -%}
       <span class="btn-fill" data-fill></span>
     {%- endif -%}
-    
+
     {%- if final_variant == 'icon' -%}
       {%- comment -%} Icon-only button {%- endcomment -%}
       {%- if has_icon -%}
-        {%- render 'icon', icon: final_icon_name, size: 'md', class: 'button-icon' -%}
+        {%- render 'icon'
+          , icon: final_icon_name
+          , size: 'md'
+          , class: 'button-icon' -%}
       {%- else -%}
         <span class="btn-text">{{ label | escape }}</span>
       {%- endif -%}
@@ -134,30 +211,52 @@
       {%- comment -%} Text button with optional icon {%- endcomment -%}
       <span class="btn-text">
         {%- if has_icon and icon_pos == 'left' -%}
-          {%- render 'icon', icon: final_icon_name, size: 'sm', class: 'button-icon' -%}
+          {%- render 'icon'
+            , icon: final_icon_name
+            , size: 'sm'
+            , class: 'button-icon' -%}
         {%- endif -%}
-        
+
         {%- unless final_variant == 'icon' -%}
           {{ label | escape }}
         {%- endunless -%}
-        
+
         {%- if has_icon and icon_pos == 'right' -%}
-          {%- render 'icon', icon: final_icon_name, size: 'sm', class: 'button-icon' -%}
+          {%- render 'icon'
+            , icon: final_icon_name
+            , size: 'sm'
+            , class: 'button-icon' -%}
         {%- endif -%}
       </span>
     {%- endif -%}
   </button>
 {%- else -%}
   {%- comment -%} Link elements styled as buttons: anchor tags with button classes {%- endcomment -%}
-  <a class="{{ button_classes }}"{% if link != blank %} href="{{ link }}"{% if external %} target="_blank" rel="noopener"{% endif %}{% else %} aria-disabled="true" tabindex="-1"{% endif %} {{ shopify_attributes }}>
+  <a
+    class="{{ button_classes }}"
+    {% if inline_style != blank %}style="{{ inline_style }}"{% endif %}
+    {% if link != blank %}
+    href="{{ link }}"
+    {% if external %}
+    target="_blank"
+    rel="noopener"
+    {% endif %}
+    {% else %}
+    aria-disabled="true"
+    tabindex="-1"
+    {% endif %}
+    {{ shopify_attributes }}>
     {%- if needs_btn_fill -%}
       <span class="btn-fill" data-fill></span>
     {%- endif -%}
-    
+
     {%- if final_variant == 'icon' -%}
       {%- comment -%} Icon-only button {%- endcomment -%}
       {%- if has_icon -%}
-        {%- render 'icon', icon: final_icon_name, size: 'md', class: 'button-icon' -%}
+        {%- render 'icon'
+          , icon: final_icon_name
+          , size: 'md'
+          , class: 'button-icon' -%}
       {%- else -%}
         <span class="btn-text">{{ label | escape }}</span>
       {%- endif -%}
@@ -165,15 +264,21 @@
       {%- comment -%} Text button with optional icon {%- endcomment -%}
       <span class="btn-text">
         {%- if has_icon and icon_pos == 'left' -%}
-          {%- render 'icon', icon: final_icon_name, size: 'sm', class: 'button-icon' -%}
+          {%- render 'icon'
+            , icon: final_icon_name
+            , size: 'sm'
+            , class: 'button-icon' -%}
         {%- endif -%}
-        
+
         {%- unless final_variant == 'icon' -%}
           {{ label | escape }}
         {%- endunless -%}
-        
+
         {%- if has_icon and icon_pos == 'right' -%}
-          {%- render 'icon', icon: final_icon_name, size: 'sm', class: 'button-icon' -%}
+          {%- render 'icon'
+            , icon: final_icon_name
+            , size: 'sm'
+            , class: 'button-icon' -%}
         {%- endif -%}
       </span>
     {%- endif -%}
