@@ -140,14 +140,68 @@
                     
                   {%- when 'button' -%}
                     {%- if block.settings.button_label != blank -%}
+                      {%- liquid
+                        assign variant_resolved = block.settings.button_variant | default: block.settings.button_style
+                        assign inline_style_str = ''
+                        if block.settings.button_radius_override > 0
+                          assign inline_style_str = '--buttons-radius: ' | append: block.settings.button_radius_override | append: 'px;'
+                        endif
+
+                        # Per-button color overrides (primary, secondary, success, danger, icon)
+                        assign override_variant = variant_resolved
+                        assign allow_color_override = false
+                        if override_variant == 'primary' or override_variant == 'secondary' or override_variant == 'success' or override_variant == 'danger' or override_variant == 'icon'
+                          assign allow_color_override = true
+                        endif
+
+                        if allow_color_override
+                          assign custom_bg = block.settings.button_bg_color
+                          assign custom_text = block.settings.button_text_color
+                          assign custom_hover = block.settings.button_hover_color
+                          assign darkness = block.settings.button_hover_darkness | default: 0
+
+                          # Compute hover from darkness slider if no explicit hover color and bg provided
+                          if custom_hover == blank and custom_bg != blank and darkness > 0
+                            assign custom_hover = custom_bg | color_modify: 'darken', darkness
+                          endif
+
+                          # Helper to append a color variable if present
+                          if custom_bg != blank
+                            assign bg_r = custom_bg | color_extract: 'red'
+                            assign bg_g = custom_bg | color_extract: 'green'
+                            assign bg_b = custom_bg | color_extract: 'blue'
+                            assign inline_style_str = inline_style_str | append: '--color-button-' | append: override_variant | append: '-bg: ' | append: bg_r | append: ' ' | append: bg_g | append: ' ' | append: bg_b | append: ';'
+                          endif
+                          if custom_text != blank
+                            assign text_r = custom_text | color_extract: 'red'
+                            assign text_g = custom_text | color_extract: 'green'
+                            assign text_b = custom_text | color_extract: 'blue'
+                            assign inline_style_str = inline_style_str | append: '--color-button-' | append: override_variant | append: '-text: ' | append: text_r | append: ' ' | append: text_g | append: ' ' | append: text_b | append: ';'
+                          endif
+                          if custom_hover != blank
+                            assign hover_r = custom_hover | color_extract: 'red'
+                            assign hover_g = custom_hover | color_extract: 'green'
+                            assign hover_b = custom_hover | color_extract: 'blue'
+                            # hover variable naming differs for ghost/outline; we only handle core filled/icon variants here
+                            assign inline_style_str = inline_style_str | append: '--color-button-' | append: override_variant | append: '-hover: ' | append: hover_r | append: ' ' | append: hover_g | append: ' ' | append: hover_b | append: ';'
+                          endif
+                        endif
+
+                        # Combine custom classes with button--fixed
+                        assign button_custom_classes_str = 'button--fixed'
+                        if block.settings.button_custom_classes != blank
+                          assign button_custom_classes_str = button_custom_classes_str | append: ' ' | append: block.settings.button_custom_classes
+                        endif
+                      -%}
                       {%- render 'button',
                         label: block.settings.button_label,
                         link: block.settings.button_link,
                         size: block.settings.button_size,
-                        style: block.settings.button_style,
+                        variant: variant_resolved,
                         external: block.settings.button_external,
                         show_icon: block.settings.button_icon,
-                        classes: 'button--fixed',
+                        classes: button_custom_classes_str,
+                        inline_style: inline_style_str,
                         shopify_attributes: block.shopify_attributes
                       -%}
                     {%- endif -%}
@@ -927,23 +981,20 @@
         },
         {
           "type": "select",
-          "id": "button_style",
+          "id": "button_variant",
           "options": [
-            {
-              "value": "primary",
-              "label": "t:sections.global.settings.button_style.options__1.label"
-            },
-            {
-              "value": "secondary",
-              "label": "t:sections.global.settings.button_style.options__2.label"
-            },
-            {
-              "value": "link",
-              "label": "t:sections.global.settings.button_style.options__3.label"
-            }
+            { "value": "primary",   "label": "t:sections.global.settings.button_variant.options__1.label" },
+            { "value": "secondary", "label": "t:sections.global.settings.button_variant.options__2.label" },
+            { "value": "success",   "label": "t:sections.global.settings.button_variant.options__3.label" },
+            { "value": "danger",    "label": "t:sections.global.settings.button_variant.options__4.label" },
+            { "value": "ghost",     "label": "t:sections.global.settings.button_variant.options__5.label" },
+            { "value": "outline",   "label": "t:sections.global.settings.button_variant.options__6.label" },
+            { "value": "text-link", "label": "t:sections.global.settings.button_variant.options__7.label" },
+            { "value": "link",      "label": "t:sections.global.settings.button_variant.options__8.label" }
           ],
           "default": "primary",
-          "label": "t:sections.global.settings.button_style.label"
+          "label": "t:sections.global.settings.button_variant.label",
+          "info": "t:sections.global.settings.button_variant.info"
         },
         {
           "type": "select",
@@ -976,6 +1027,50 @@
           "id": "button_icon",
           "label": "t:sections.global.settings.button_icon.label",
           "default": true
+        },
+        {
+          "type": "text",
+          "id": "button_custom_classes",
+          "label": "t:sections.global.settings.button_custom_classes.label"
+        },
+        {
+          "type": "range",
+          "id": "button_radius_override",
+          "label": "t:sections.global.settings.button_radius_override.label",
+          "unit": "px",
+          "min": 0,
+          "max": 32,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "Button color overrides",
+          "info": "Optional per-button overrides. Leave blank to inherit variant styles. Hover color uses darkness slider if hover color blank."
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "t:sections.global.settings.button_bg_color.label"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "t:sections.global.settings.button_text_color.label"
+        },
+        {
+          "type": "color",
+          "id": "button_hover_color",
+          "label": "t:sections.global.settings.button_hover_color.label"
+        },
+        {
+          "type": "range",
+          "id": "button_hover_darkness",
+          "label": "t:sections.global.settings.button_hover_darkness.label",
+          "min": 0,
+          "max": 40,
+          "step": 1,
+          "default": 10
         }
       ]
     },
