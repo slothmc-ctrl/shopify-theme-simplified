@@ -7715,7 +7715,20 @@ details.active .drawer__promotions .mega-menu__item,
   border-end-end-radius: var(--border-radius);
 }
 
-.mega-menu[open] {
+.mega-menu[open],
+/* When the parent <details> (custom details-mega) is open the .mega-menu element is a child, not itself open.
+   Add selectors to target the open state on the <details> element so the menu becomes interactive. */
+details[is=details-mega][open] > .mega-menu,
+details[open] > .mega-menu {
+  pointer-events: auto;
+}
+
+/* Dropdowns are rendered as children of a <details> element too; when the details is open
+   the .dropdown should be interactive. Add matching selectors for details[open] so dropdown
+   children (links, buttons) receive pointer events when visible. */
+.dropdown[open],
+details[is=details-dropdown][open] > .dropdown,
+details[open] > .dropdown {
   pointer-events: auto;
 }
 
