@@ -7791,6 +7791,22 @@ details[open] > .dropdown {
     z-index: 60 !important; /* above header */
   }
 
+  /* Make the details element the positioning context so the menu is anchored
+     to its originating nav item instead of the header. This prevents menus from
+     spanning the whole page when the header is positioned. */
+  .header__menu>ul.with-block>li>details {
+    position: relative;
+  }
+
+  /* Don't force the menu to full width; allow it to size to its content. */
+  details[is=details-mega][open] > .mega-menu,
+  details[open] > .mega-menu {
+    width: auto !important;
+    min-width: 220px !important;
+    max-width: 1200px !important;
+    left: 0 !important;
+  }
+
   /* Remove the large top padding on the menu container which was expanding
      the menu height to cover the page. Keep bottom padding for visual spacing. */
   details[is=details-mega][open] > .mega-menu .mega-menu__container,
