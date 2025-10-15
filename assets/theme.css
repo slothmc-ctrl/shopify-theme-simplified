@@ -7825,7 +7825,9 @@ details[open] > .dropdown {
   max-width: 100%;
 }
 
-.mega-menu[open] .mega-menu__item {
+.mega-menu[open] .mega-menu__item,
+details[is=details-mega][open] > .mega-menu .mega-menu__item,
+details[open] > .mega-menu .mega-menu__item {
   transform: none;
   opacity: 1;
 }
@@ -7985,10 +7987,13 @@ details[open] > .dropdown {
 @media screen and (min-width: 992px) {
   details[is=details-mega][open] > .mega-menu,
   details[open] > .mega-menu {
+    /* Use fixed positioning to center relative to viewport instead of parent details */
+    position: fixed !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: min(1200px, 95vw) !important;
     max-width: 1200px !important;
+    top: var(--header-height, 127px) !important;
     box-shadow: 0 8px 30px rgb(10 10 10 / 30%) !important;
   }
 
@@ -8004,7 +8009,7 @@ details[open] > .dropdown {
   /* Use a grid for the top-level list so items flow into columns */
   .mega-menu__list {
     display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
     gap: var(--sp-6) !important;
     align-items: start !important;
   }
