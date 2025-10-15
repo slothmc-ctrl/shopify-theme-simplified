@@ -7978,6 +7978,68 @@ details[open] > .dropdown {
   grid-template-rows: auto auto;
 }
 
+/* Desktop multi-column mega-menu layout
+   Widen the menu and use a grid for multiple columns on larger viewports. This
+   improves the visual layout so the mega-menu renders as a multi-column panel
+   instead of a narrow single column. */
+@media screen and (min-width: 992px) {
+  details[is=details-mega][open] > .mega-menu,
+  details[open] > .mega-menu {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: min(1200px, 95vw) !important;
+    max-width: 1200px !important;
+    box-shadow: 0 8px 30px rgb(10 10 10 / 30%) !important;
+  }
+
+  /* Add comfortable inner padding and ensure scrolling behavior inside the panel */
+  details[is=details-mega][open] > .mega-menu .mega-menu__container,
+  details[open] > .mega-menu .mega-menu__container {
+    padding-inline: var(--sp-8) !important;
+    padding-block: var(--sp-6) !important;
+    max-height: calc(100vh - var(--header-height) - 24px) !important;
+    overflow: auto !important;
+  }
+
+  /* Use a grid for the top-level list so items flow into columns */
+  .mega-menu__list {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: var(--sp-6) !important;
+    align-items: start !important;
+  }
+
+  /* Reset per-item flex sizing so grid controls layout */
+  .mega-menu__item--nav,
+  .mega-menu__item--small,
+  .mega-menu__item--large {
+    flex: none !important;
+    max-width: none !important;
+    padding-inline-end: 0 !important;
+  }
+
+  /* Ensure nav blocks inside the mega menu also use grid columns */
+  .mega-menu__nav.grid {
+    grid-auto-flow: row !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: auto !important;
+    column-gap: var(--sp-6) !important;
+  }
+
+  .mega-menu__nav-item {
+    padding-block: var(--sp-2) !important;
+  }
+
+  /* Subtle scrollbar styling for the container */
+  details[open] > .mega-menu .mega-menu__container::-webkit-scrollbar {
+    height: 8px; width: 8px;
+  }
+  details[open] > .mega-menu .mega-menu__container::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-border));
+    border-radius: 999px;
+  }
+}
+
 .mega-menu__item--small .mega-menu__nav.grid {
   grid-template-columns: auto;
 }
