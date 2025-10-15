@@ -7770,6 +7770,28 @@ details[open] > .dropdown {
   max-width: calc(75% - var(--header-nav-gap) / 2);
 }
 
+/* Fix: ensure dropdowns and mega menus are positioned below the header on desktop
+   instead of using top:0 with large padding which can make the menu cover the page. */
+@media screen and (min-width: 768px) {
+  .dropdown,
+  .mega-menu {
+    /* place the menu right below the header element */
+    inset-block-start: 100%;
+    top: auto !important;
+  }
+
+  /* remove the large padding hack on the container so height matches content */
+  .dropdown__container,
+  .mega-menu__container {
+    padding-block-start: 0 !important;
+  }
+
+  /* keep rounded containers visual spacing if needed */
+  .mega-menu__container {
+    padding-block-end: var(--sp-14);
+  }
+}
+
 .mega-menu__item--full {
   flex: 100%;
   max-width: 100%;
