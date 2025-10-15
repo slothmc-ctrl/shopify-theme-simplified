@@ -7773,22 +7773,34 @@ details[open] > .dropdown {
 /* Fix: ensure dropdowns and mega menus are positioned below the header on desktop
    instead of using top:0 with large padding which can make the menu cover the page. */
 @media screen and (min-width: 768px) {
-  .dropdown,
-  .mega-menu {
-    /* place the menu right below the header element */
-    inset-block-start: 100%;
-    top: auto !important;
+  /* When a details-based menu is open, anchor the menu below the header and
+     limit its size so it cannot cover the entire page. Use higher specificity
+     and !important where necessary to override inline utility classes. */
+  details[is=details-mega][open] > .mega-menu,
+  details[open] > .mega-menu,
+  details[is=details-dropdown][open] > .dropdown {
+    position: absolute !important;
+    top: 100% !important; /* place directly beneath the header/summary */
+    left: 0 !important;
+    right: auto !important;
+    width: auto !important;
+    min-width: 250px !important;
+    max-width: calc(100% - var(--sp-8)) !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    z-index: 60 !important; /* above header */
   }
 
-  /* remove the large padding hack on the container so height matches content */
-  .dropdown__container,
-  .mega-menu__container {
+  /* Remove the large top padding on the menu container which was expanding
+     the menu height to cover the page. Keep bottom padding for visual spacing. */
+  details[is=details-mega][open] > .mega-menu .mega-menu__container,
+  details[open] > .mega-menu .mega-menu__container,
+  details[is=details-dropdown][open] > .dropdown .dropdown__container,
+  details[open] > .dropdown .dropdown__container {
     padding-block-start: 0 !important;
-  }
-
-  /* keep rounded containers visual spacing if needed */
-  .mega-menu__container {
-    padding-block-end: var(--sp-14);
+    padding-block-end: var(--sp-6) !important;
+    max-height: calc(100vh - var(--header-height) - 20px) !important;
+    overflow: auto !important;
   }
 }
 
